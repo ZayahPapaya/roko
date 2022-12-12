@@ -1,13 +1,13 @@
 class Roko {
   name = 'Roko';
   regiment = 'Dragoons';
-  
+
   maxWounds = 12;
   damage = 0;
   wounds = `${this.maxWounds - this.damage}`;
-  
-  armor = 5 + 2 + 4 + 6 + 1 // 18
-  implants = 7; // implants benefit to 10
+
+  armor = 5 + 4 + 6 + 1 // 16
+  implants = 8; // implants benefit to 10
 
   fate = 3;
   // 4 requisition rolls
@@ -16,7 +16,7 @@ class Roko {
     advanced: 500,// 800 remaining
     total: base + advanced,
   };
-  
+
   aptitudes = [
     'Ballistic Skill',
     'Intelligence',
@@ -27,14 +27,14 @@ class Roko {
     'Willpower',
     'Defense', // This is from double aptitudes from homeworld
   ];
-  
+
   homeworld = {
     type: 'Frontier World',
-    shid1: 'Maverick',
-    shid2: 'Grenadier',
-    shid3: 'Die Hards',
-    shid4: 'Close Order Drill',
-    shid5: 'Regimental Rivalry',
+    command: 'Maverick',
+    regimentType: 'Grenadier',
+    training: 'Die Hards',
+    doctrines: 'Close Order Drill',
+    quirk: 'Regimental Rivalry',
   };
 
   stats = {
@@ -101,6 +101,26 @@ class Roko {
       bonuses: 0,
       purchased: 0,
     },
+    reciepts: [
+      {
+        name: 'Toughness +10',
+        cost: 350,
+        description: 'N/A',
+        isPerk: false,
+      },
+      {
+        name: 'Intelligence +10',
+        cost: 350,
+        description: 'N/A',
+        isPerk: false,
+      },
+      {
+        name: 'Ballistics Skill +5',
+        cost: 250,
+        description: 'N/A',
+        isPerk: false,
+      },
+    ]
   };
 
   skills = [
@@ -124,6 +144,21 @@ class Roko {
       tier: 2, // two tech-use perks
       description: 'string',
     },
+    {
+      name: 'Trade (Armorer)',
+      tier: 1,
+      description: 'N/A',
+    },
+    {
+      name: 'Commerce',
+      tier: 1,
+      description: 'N/A',
+    },
+    {
+      name: 'Parry',
+      tier: 1,
+      description: 'N/A',
+    }
   ];
 
   talents = [
@@ -136,7 +171,8 @@ class Roko {
     },
     {
       name: 'Weapon Training (Las, Power)',
-      description: 'string',
+      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
+      This Talent may be taken more than once, each time with a different specialization.`,
     },
     {
       name: 'Technical Knock',
@@ -153,7 +189,7 @@ class Roko {
     },
     {
       name: 'Quick Draw',
-      description: 'string',
+      description: 'The character has practised so frequently with his weapons that they practically leap into his hands in response to a simple thought. The character can draw and ready a weapon as a Free Action when the character is armed with a Pistol or Basic class ranged weapon, or a melee weapon that can be wielded in one hand.',
     },
     {
       name: 'Combat Formation',
@@ -165,7 +201,8 @@ class Roko {
     },
     {
       name: 'Weapon Training (launchers)',
-      description: 'string',
+      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
+      This Talent may be taken more than once, each time with a different specialization.`,
     },
     {
       name: 'Hatred (8th Gavlax Lancers)',
@@ -183,16 +220,67 @@ class Roko {
       name: 'Distrusted Authority',
       description: 'string',
     },
-    // {
-    //   name: '',
-    //   description '',
-    // },
+    {
+      name: 'The  Flesh is Weak',
+      cost: 400,
+      description: `The character's body has undergone significant bionic replacement, trading frail flesh for unyielding metal. The character is more machine than man now, and has the resilience to prove it, though his squad mates might look somewhat sceptically upon his bionically enhanced form.
+      This character gains the Machine (X) Trait, where X is equal to half of the number of Cybernetics he possesses (rounded up), to a maximum of an amount equal to his Toughness Bonus. If he gains a new Cybernetic, the value of the Trait increases to reflect the new Cybernetic. Note that this only applies to Cybernetics such as bionic replacement limbs and organ replacements, sub-systems, and mechadendrites (see page 204 of the Only War Core Rulebook), and not to Traits and Talents that grant similar effects.`,
+      isPerk: true,
+    },
+    {
+      name: 'Armor-Monger',
+      cost: 200,
+      description: 'The character is a skilled armourer and constantly tinkers and improves his armour or keeps it in pristine shape by repairing the slightest damage it sustains. With years of training, the character has even learned to enhance the protection afforded by his armour and how to use it to its optimum. The character increases the Armour Points of any armour he wears by 1 on all locations it would normally cover, as long as he has at least an hour each day to clean and repair it or make minor modifications. This bonus applies only to armour when worn by the character, as it combines his training as much as his skill at armoury.',
+      isPerk: true,
+    },
+    {
+      name: 'Infused Knowledge',
+      cost: 400,
+      description: `The character has been infused with a great wealth of lore and knowledge, either through punishing noetic techniques or by arcane methods kept secret by the guardians of technology and learning. The character counts as having all Common Lore and Scholastic Lore Skills at Rank 1 (Known) (basically they know something about everything). If they wish to later improve their Lore Skills, these advances must be bought using Experience Points (from Rank 1) as normal.
+      Such is their skill, they also add one Degree of Success to any successful Common or Scholastic Lore Tests.`,
+      isPerk: true,
+    },
+    {
+      name: 'Potentia Coil Induction',
+      cost: 200,
+      descrption: `The Crimson Guard are said to be as relentless as machines on the march, capable of making journeys on foot with full kit that other regiments could not manage unburdened. While much of this claim can be attributed to their fearsome reputation, the veteran warriors of the Adeptus Mechanicus can achieve feats far beyond the endurance of frail human flesh by drawing on external reserves of power.
+      The character has learned to feed additional power to his potentia coil through electro inductors and eliminate any weariness or strain he suffers from. When in the presence of a suitable power source, such as a portable generator or the power plant of one of his regiment's fighting vehicles, he may make an Ordinary (+10) Toughness Test and recover from a number of levels of Fatigue equal to the Degrees of Success achieved on the Test.`,
+      isPerk: true,
+    },
+    {
+      name: 'Vitality Coils',
+      cost: 400,
+      description: `The potentia coil implanted in the initiates of the Cult Mechanicus is thoroughly integrated with both the biological
+      and mechanical components of their frame. This most sacred implant assists in the regulation of everything from the devotee's
+      bioelectric reserves to his heart rate, becoming the lynchpin of his vital functions. In dire circumstances, a hardy servant of the
+      Machine God can draw greater power into his potentia coil to supplement these functions and accelerate his body's healing.
+      The character has learned to feed additional power to his potentia coil through electoo inductors, and can supercharge
+      it to maximum capacity to restore lost Wounds. Once per game session when in the presence of a suitable power source,
+      such as a portable generator or the power plant of one of his regiment's fighting vehicles, he may make a Challenging (+0)
+      Toughness Test as a Full Action. If he succeeds, he removes 1d5 Wounds, plus 1 Wound per additional Degree of Success he
+      scores on the Test. He cannot remove Critical Damage this way. However, the restoration process is potentially volatile, and any
+      irregularities in the power feed can have deadly consequences. If he fails the Test, he suffers 1 Damage ignoring armour and
+      Toughness Bonus, plus 1 additional Damage for every three Degrees of Failure he scores on the Test.`,
+      isPerk: true,
+    },
+    {
+      name: 'Servo-Arm',
+      cost: 250,
+      description: `The Servitor assists in all repairs the Enginseer performs, acting as a natural extension of his will as he communes withh vehicle machine spirits. When assisted by his Servitor, the Enginseer gains a +10 bonus to all Tech-Use Tests to make repairs, and halves the time any repair takes.`,
+      isPerk: true,
+    },
+    {
+      name: 'Field Repairs',
+      cost: 300,
+      description: `On the battlefield, the Enginseer links to his Servitor, relaying complex data and instructions, and the Servitor enacts those commands with precision. As long as hhis Servitor is within range of communication, the Enginseer may perform Tech-Use Tests on anything next to the Servitor at a -10 penallty.`,
+      isPerk: true,
+    },
   ];
 
   traits = [
     {
       name: 'Mechanicus Implants',
-      description:`
+      description: `
       The character is a servant of the Machine-God, and has access to implants beyond other characters.
       
       ELECTRO-GRAFT
@@ -221,170 +309,95 @@ class Roko {
   ];
 
   gear = [
-    // unless above rare then consume roll without a roll
-    // 4 requisition rolls
-    // handwave unimportant items within reason
     // Subdermal Armor
     // Luminen Capacitors
-    // Maglev Coils
-    // Gun
-    // Tracer Ammo
     {
       name: 'Mind Impulse Unit',
       quality: 'Good',
-      description: 'stats',
+      description: `These devices, also known as sense-links, allow the owner to interface directly with a machine or technological device. MIUs see widespread use among the Adeptus Mechanicus who regard them as objects of divine communion. A basic MIU implant involves a single spinal or cortex connector, while advanced variants include wrist connector probes—and possibly mechadendrite connectors—in addition to the spinal plug.
+      Common models impose no modifiers to machine spirit communication and add a +10 bonus to Tech-Use or Operate Tests used in conjunction with devices capable of MIU linking.
+      Poor MIU systems require a Willpower Test to use and impose a -10 penalty when attempting to interface with a device.
+      Good models grant a +10 bonus to communicate with machine spirits and for Tech-Use, Operate, Logic, Inquiry, and Ballistic Skill Tests made as part of interfacing with the MIU systems.`,
     },
     {
       name: 'Autosanguine',
       quality: 'Good',
-      description: 'stats',
+      description: `This ancient and blessed technology of the Mechanicus flows through the character's blood. These miniscule machines repair minor injuries and speed healing. When applying healing, the character is always considered Lightly Damaged, and heals at an increased rate, removing 2 points of Damage per day. A Good Craftsmanship autosanguine grants the wearer +20 bonus to tests against toxins, disease, radiation, and the like.`,
     },
     {
       name: 'Servo-Arm',
       quality: 'Good',
-      description: 'stats',
+      description: `A servo-arm allows a lone Tech-Priest to fulfil the functions of an entire repair bay, allowing him to even lift a Chimera armored transport on its side to repair a broken tread link. A properly constructed implanted servo-arm has stabilization and support systems running throughout the Enginseer's body, allowing him to achieve such feats without harming himself in the process. A servo-arm can extend up to 1.5m from its shoulder or back mounting and has a fixed Strength value of 75 with the Unnatural Strength(7) Trait - the servo-arm always uses this value, regardless of the character's Strength Characteristic or Talents. Though incapable of fine manipulation, the servo-arm's powerful claw can be used to lift heavy objects or tether the user to a suitable anchor as a Free Action. In combat, the character can use thhe servo-arm to make a Standard Attack Action or strike with it as his Reaction for the Round (so long as he only uses it once per Round). A servo-arm has the following profile: Melee; 2d10+14 I; Pen 10; Unwieldy. Best Craftsmanship servo-arms have a Strength of 85 with the Unnatural Strength(7) Trait (increasing Damage to 2d10+15). To use an installed servo-arm, a character must hhave the Mechadendrite Use (Utility) Talent. To use it as a weapon, a character must also have the Mechadendrite Use (Weapon) Talent.`,
     },
     {
       name: 'Augur Array',
       quality: 'Normal',
-      description: 'stats',
+      description: `These implanted devices duplicate the effects of sensor systems that go beyond normal human senses. In all cases, their use requires concentration and a Half Action.
+      Common systems function identically to a standard handheld auspex device.
+      Poor systems possess only a single detection ability (either heat, radiation, electromagnetics, or very rarely Daemonic taint) and have the limited range of 20 metres. If the augur is set to detect Daemonic taint, it has the possibility to be overwhelmed and malfunction should a Daemon get too close.
+      Good systems function as a full auspex but also allow rerolls on all Perception-based Tests when using its functions. In regards to the Daemonic taint detection, as opposed to the Poor system augur, a Good system cannot be overwhelmed and seems to almost filter out any taint it detects instead of getting backed up by it.`,
+      special: [
+        `Auspex/Scanner: The standard Imperial detection device, these are used to detect energy emissions, motion, biological life-signs, and other information. A character using an auspex gains a +20 bonus to Awareness Tests and may make a Tech-Use Test to use it to spot things that would not normally be possible with human senses, such as invisible gases, nearby signs of life, non-visible radiation, or other things as appropriate. The standard range of an auspex is 50m, though walls more than 50cm thick and certain shielding materials can block the scanner. Goof Craftsmanship models increase the bonus to +30, but Poor Craftsmanship models can only penetrate 20cm of material.`,
+      ]
     },
     {
       name: 'Sacred Unguents',
       quality: 'Normal',
-      description: 'stats',
+      description: `Sacred unguents blessed by the Omnissiah are much sought after for their mystical properties when applied to machines. If applied to a weapon - which requires a Full Action - the weapon becomes immune to jamming for a number of shots equal to its Clip Size. If the unguent is applied to an already jammed weapon, it immediately unjams but there is no further effect.`,
     },
     {
       name: 'Dataslate',
       quality: 'Normal',
-      description: 'Iphone',
+      description: `Data-slates are common in the Imperium and are the primary means of storing and reading printed text and other media such as video or audio recordings. They are cheap and easy to make, and many contain a single media recording, such as t ext, and can only play that single file. Others can re-record new information or transmit and receive data from other devices.`,
     },
     {
       name: 'Omnissian Axe',
       quality: 'Normal',
-      description: 'stats',
+      description: `Granted to suitably devoted followers of the Omnissiah, this weapon has a long staff-like body tipped with half of the circular Adeptus Mechanicus skull and cog icon. The symbol forms a blade and is sheathed in a power field. Covered with inscribed circuitry designs indicating the sacred nature of the weapon, many a foe has realised far too late that what appeared to be a religious walking staff was really a deadly weapon. The Omnissian axe also functions as a combi-tool. This a two-handed melee weapon.
+      Omnissian Axe - Melee - 1d10+4 E, 6 pen, power field, unbalanced`,
+      special: [
+        `Power Field: A field of power wreathes weapons with this Quality, increasing their Damage and Penetration. Such modifiers are already included in the weapon's profile. When the character successfully use this weapon to Parry an attack made with a weapon that lacks this Quality, he has a 75% chance of destroying his attacker's weapon. Weapons with the Warp Weapon Quality and Natural Weapons are immune to this effect.`,
+        `Unbalanced: Heavy and difficult to ready after an attack, these kinds of weapons cannot be used to make Lighting Attack Actions, and impose a -10 when used to Parry.`
+      ]
     },
     {
       name: 'Calculus Logi Upgrade',
       quality: 'Normal',
-      description: 'stats',
+      description: `These bionics are internal cogitator implants which aid in data retention and processing. The user can rapidly sift through stacked data-slates and parchments, applying intuition to vast reams of data far beyond the capabilities of a normal man. This implant grants the user a +10 bonus to Literacy, Logic, or Scholastic Lore Tests.`,
     },
     {
       name: 'Ballistic Mechadendrite',
       quality: 'Normal',
-      description: 'stats',
+      description: `This solid, shoulder-mounted mechadendrite is designed for selfdefence. This two metre limb may be armed with any Pistol-class weapon with the Compact Upgrade. The character can attack with this weapon as his Reaction. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
+    },
+    {
+      name: 'Lathe Laspistol',
+      quality: 'Normal',
+      description: 'Pistol, 40m range, S/2/- 1d10+6 E, 2 pen, N/A clip, N/A reload, tearing',
     },
     {
       name: 'Manipulator Mechadendrite',
       quality: 'Normal',
-      description: 'stats',
+      description: `Possibly the most common form of mechadendrite, this artificial limb is a great aid to Enginseers working to repair vehicles in the heat of battle, allowing them to lift greater weights and more easily operate industrial gear. It can extend out to 1.5m and grants the user +20 to Strength-based Tests; the vicious gripping and crushing pincers can also tether the user to gantries or suitably heavy objects as a Free Action. The heavy metal pincers can be used in combat to make melee attacks. The character can strike with it as his Reaction for the Round or use it to make a Standard Attack (so long as it is only used once per Round). The manipulator mechadendrite deals 1d10+2 I Damage.
+      While powerful, the manipulator is not subtle, and attempts to use it for such tasks as data-slate typing, inscribing sacrificial etchings, handling delicate objects, or the like only ends with equipment being dropped, smashed, or otherwise ruined. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
     },
     {
       name: 'Utility Mechadendrite',
       quality: 'Normal',
-      description: 'stats',
+      description: `This two-metre long limb houses a variety of tools and attachments designed to assist a Tech-Priest in the course of his holy duties. The mechadendrite counts as a combi-tool, granting a +10 bonus to all Tech-Use Tests. The limb also houses six injector pistons, each of which may be filled with one dose of sacred unguent. These can be supplied separately. In addition to this, the limb contains an electrically powered censer, which can gust incense fumes over particularly troublesome faults. The censer generates one “blast” of smoke every fifteen minutes. This can be employed in melee combat to distract and choke, imposing a -5 penalty to Weapon Skill Tests made by all living creatures within a two-metre radius for one Round. This is a Half Action. Unless the censer is deactivated, all Perception Tests made to detect the Tech- Priest that rely on a sense of smell gain a +10 bonus. Finally, the mechadendrite contains a cutting blade. This counts as a knife with the Defensive Quality and Mono upgrade. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
+      special: [
+        `Knife: melee/thrown, 5m, 1d5 R, 0 pen`,
+        `Defensive: A Defensive weapon, such as a shield, is intended to be used to block attacks and is awkward when used to make attacks. Defensive weapons grant a +15 bonus to Tests made when used to Parry, but impose a -10 penalty when used to make attacks.`,
+        `Mono: Mono weapons have specially fashioned blades with superfine edges that can easily cut through armour and never lose their edge. Mono weapons no longer count as Primitive and add a +2 bonus to their Penetration. The mono upgrade can be applied to a power weapon, but it has no effect whilst the power field is active. If the power field is ever lost or deactivated, the mono upgrade's bonuses then apply.`,
+      ]
     },
   ];
 
   wishlistGear = [
-    'Utility Mechadendrite #2',
+    'Subdermal Armor',
+    'Luminen Capacitor',
+    'Maglev Coils',
     'Medicae Mechadendrite',
-    'Autosanguine',
-    'Augur Array',
-  ];
-
-  purchases = [
-    {
-      name: 'Toughness +10',
-      cost: 350,
-      description: 'N/A',
-      isPerk: false,
-    },
-    {
-      name: 'Intelligence +10',
-      cost: 350,
-      description: 'N/A',
-      isPerk: false,
-    },
-    {
-      name: 'The  Flesh is Weak',
-      cost: 400,
-      description: `The character's body has undergone significant bionic replacement, trading frail flesh for unyielding metal. The character is more machine than man now, and has the resilience to prove it, though his squad mates might look somewhat sceptically upon his bionically enhanced form.
-      This character gains the Machine (X) Trait, where X is equal to half of the number of Cybernetics he possesses (rounded up), to a maximum of an amount equal to his Toughness Bonus. If he gains a new Cybernetic, the value of the Trait increases to reflect the new Cybernetic. Note that this only applies to Cybernetics such as bionic replacement limbs and organ replacements, sub-systems, and mechadendrites (see page 204 of the Only War Core Rulebook), and not to Traits and Talents that grant similar effects.`,
-      isPerk: true,
-    },
-    {
-      name: 'Trade (Armorer)',
-      cost: 100,
-      description: 'N/A',
-      isPerk: false,
-    },
-    {
-      name: 'Armor-Monger',
-      cost: 200,
-      description: 'The character is a skilled armourer and constantly tinkers and improves his armour or keeps it in pristine shape by repairing the slightest damage it sustains. With years of training, the character has even learned to enhance the protection afforded by his armour and how to use it to its optimum. The character increases the Armour Points of any armour he wears by 1 on all locations it would normally cover, as long as he has at least an hour each day to clean and repair it or make minor modifications. This bonus applies only to armour when worn by the character, as it combines his training as much as his skill at armoury.',
-      isPerk: true,
-    },
-    {
-      name: 'Infused Knowledge',
-      cost: 400,
-      description: `The character has been infused with a great wealth of lore and knowledge, either through punishing noetic techniques or by arcane methods kept secret by the guardians of technology and learning. The character counts as having all Common Lore and Scholastic Lore Skills at Rank 1 (Known) (basically they know something about everything). If they wish to later improve their Lore Skills, these advances must be bought using Experience Points (from Rank 1) as normal.
-      Such is their skill, they also add one Degree of Success to any successful Common or Scholastic Lore Tests.`,
-      isPerk: true,
-    },
-    {
-      name: 'Servo-Arm',
-      cost: 250,
-      description: `The Servitor assists in all repairs the Enginseer performs, acting as a natural extension of his will as he communes withh vehicle machine spirits. When assisted by his Servitor, the Enginseer gains a +10 bonus to all Tech-Use Tests to make repairs, and halves the time any repair takes.`,
-      isPerk: true,
-    },
-    {
-      name: 'Field Repairs',
-      cost: 300,
-      description: `On the battlefield, the Enginseer links to his Servitor, relaying complex data and instructions, and the Servitor enacts those commands with precision. As long as hhis Servitor is within range of communication, the Enginseer may perform Tech-Use Tests on anything next to the Servitor at a -10 penallty.`,
-      isPerk: true,
-    },
-    {
-      name: 'Ballistics Skill +5',
-      cost: 250,
-      description: 'N/A',
-      isPerk: false,
-    },
-    {
-      name: 'Potentia Coil Induction',
-      cost: 200,
-      descrption: `The Crimson Guard are said to be as relentless as machines on the march, capable of making journeys on foot with full kit that other regiments could not manage unburdened. While much of this claim can be attributed to their fearsome reputation, the veteran warriors of the Adeptus Mechanicus can achieve feats far beyond the endurance of frail human flesh by drawing on external reserves of power.
-      The character has learned to feed additional power to his potentia coil through electro inductors and eliminate any weariness or strain he suffers from. When in the presence of a suitable power source, such as a portable generator or the power plant of one of his regiment's fighting vehicles, he may make an Ordinary (+10) Toughness Test and recover from a number of levels of Fatigue equal to the Degrees of Success achieved on the Test.`,
-      isPerk: true,
-    },
-    {
-      name: 'Vitality Coils',
-      cost: 400,
-      description: `The potentia coil implanted in the initiates of the Cult Mechanicus is thoroughly integrated with both the biological
-      and mechanical components of their frame. This most sacred implant assists in the regulation of everything from the devotee's
-      bioelectric reserves to his heart rate, becoming the lynchpin of his vital functions. In dire circumstances, a hardy servant of the
-      Machine God can draw greater power into his potentia coil to supplement these functions and accelerate his body's healing.
-      The character has learned to feed additional power to his potentia coil through electoo inductors, and can supercharge
-      it to maximum capacity to restore lost Wounds. Once per game session when in the presence of a suitable power source,
-      such as a portable generator or the power plant of one of his regiment's fighting vehicles, he may make a Challenging (+0)
-      Toughness Test as a Full Action. If he succeeds, he removes 1d5 Wounds, plus 1 Wound per additional Degree of Success he
-      scores on the Test. He cannot remove Critical Damage this way. However, the restoration process is potentially volatile, and any
-      irregularities in the power feed can have deadly consequences. If he fails the Test, he suffers 1 Damage ignoring armour and
-      Toughness Bonus, plus 1 additional Damage for every three Degrees of Failure he scores on the Test.`,
-      isPerk: true,
-    },
-    {
-      name: 'Commerce',
-      cost: 100,
-      description: 'N/A',
-      isPerk: false,
-    },
-    {
-      name: 'Security',
-      cost: 100,
-      description: 'N/A',
-      isPerk: false,
-    }
   ];
 
   wishlistPerks = [
@@ -460,16 +473,45 @@ class Roko {
     {
       name: 'Weapon Training(Projectile)',
       cost: 0,
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a –20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the –20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
+      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
       This Talent may be taken more than once, each time with a different specialization.`,
       isPerk: false,
     },
     {
       name: 'Weapon Training(Heavy)',
       cost: 0,
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a –20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the –20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
+      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
       This Talent may be taken more than once, each time with a different specialization.`,
       isPerk: false,
     },
   ];
+
+  starterKit = `
+Auxilary grenade launcher weapon
+1 Frag Grenade
+1 Krak grenade
+1 Smoke grenade
+1 fire bomb grenade
+Triplex Pattern lasgun
+4 basic laspacks
+laspistol
+2 pistol laspacks
+Light carapace armor (best quality)
+Deadspace earpiece
+Uniform
+Poor weather gear
+Knife
+Rucksack/sling bag
+basic tools
+mess kit
+water canteen
+blanket
+sleep bag
+rechargable lamp pack
+grooming kit
+dogtags
+Imperial infantrymans' uplifting primer
+2 weeks Combat sustenance rations
+1 Fluff item
+  `
 };
