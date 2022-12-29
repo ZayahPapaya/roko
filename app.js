@@ -171,12 +171,12 @@ class Roko {
     },
     {
       name: 'Weapon Training (Las, Power)',
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
+      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group she has selected with this Talent. When a character attempts to use a weapon she does not have the correct Weapon Training Talent for, she suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if she has both Weapon Training in the appropriate group and Weapon Training (Heavy).
       This Talent may be taken more than once, each time with a different specialization.`,
     },
     {
       name: 'Technical Knock',
-      description: `Either through the ease of long practice, or the proper ritual to appease a weapon's machine spirit, the character can clear stoppages with a simple knock or solid smack of his hand to a weapon. The character may un-jam any gun as a Half Action, but may only use this Talent on one weapon per Round. The character must touch the weapon (often quickly and violently) to make this Talent work.`,
+      description: `Either through the ease of long practice, or the proper ritual to appease a weapon's machine spirit, the character can clear stoppages with a simple knock or solid smack of her hand to a weapon. The character may un-jam any gun as a Half Action, but may only use this Talent on one weapon per Round. The character must touch the weapon (often quickly and violently) to make this Talent work.`,
     },
     {
       name: 'Battlefield Tech-Wright',
@@ -185,11 +185,11 @@ class Roko {
     },
     {
       name: 'Bombardier',
-      description: `Due to many years of training, and an obsession that squad mates might find unnerving, the character is an expert with explosive weapons and has an uncanny control over where projectiles land. This character may make ranged attacks with weapons with the Indirect Quality targeting locations he cannot see as a Half Action instead of a Full Action as normal. When firing a weapon with the Indirect Quality or throwing a grenade, this character rolls twice to determine the direction that his attacks scatters and may choose either result.`,
+      description: `Due to many years of training, and an obsession that squad mates might find unnerving, the character is an expert with explosive weapons and has an uncanny control over where projectiles land. This character may make ranged attacks with weapons with the Indirect Quality targeting locations she cannot see as a Half Action instead of a Full Action as normal. When firing a weapon with the Indirect Quality or throwing a grenade, this character rolls twice to determine the direction that her attacks scatters and may choose either result.`,
     },
     {
       name: 'Quick Draw',
-      description: 'The character has practised so frequently with his weapons that they practically leap into his hands in response to a simple thought. The character can draw and ready a weapon as a Free Action when the character is armed with a Pistol or Basic class ranged weapon, or a melee weapon that can be wielded in one hand.',
+      description: 'The character has practised so frequently with her weapons that they practically leap into her hands in response to a simple thought. The character can draw and ready a weapon as a Free Action when the character is armed with a Pistol or Basic class ranged weapon, or a melee weapon that can be wielded in one hand.',
     },
     {
       name: 'Combat Formation',
@@ -197,16 +197,16 @@ class Roko {
     },
     {
       name: 'Resistance (fear)',
-      description: `The character's background, experience, training, exposure or plain stubbornness has developed a resistance within him. Each time the character selects this Talent, choose one area of resistance. The character gains a +10 bonus when making Tests to resist effects of this type. The GM may wish to approve certain choices or have them justified by the character's past.`,
+      description: `The character's background, experience, training, exposure or plain stubbornness has developed a resistance within her. Each time the character selects this Talent, choose one area of resistance. The character gains a +10 bonus when making Tests to resist effects of this type. The GM may wish to approve certain choices or have them justified by the character's past.`,
     },
     {
       name: 'Weapon Training (launchers)',
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
+      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group she has selected with this Talent. When a character attempts to use a weapon she does not have the correct Weapon Training Talent for, she suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if she has both Weapon Training in the appropriate group and Weapon Training (Heavy).
       This Talent may be taken more than once, each time with a different specialization.`,
     },
     {
       name: 'Hatred (8th Gavlax Lancers)',
-      description: `A group, organisation, or race has wronged the character in the past, fuelling this animosity. When fighting opponents of that group in close combat, the character gains a +10 bonus to all Weapon Skill Tests made against them. The character also finds it difficult to back down from a fight with his hated foe and must make a Willpower Test to retreat or surrender when fighting them, unless massively outnumbered or outclassed.`,
+      description: `A group, organisation, or race has wronged the character in the past, fuelling this animosity. When fighting opponents of that group in close combat, the character gains a +10 bonus to all Weapon Skill Tests made against them. The character also finds it difficult to back down from a fight with her hated foe and must make a Willpower Test to retreat or surrender when fighting them, unless massively outnumbered or outclassed.`,
     },
     {
       name: 'Enemy (8th Gavlax Lancers)',
@@ -223,14 +223,14 @@ class Roko {
     {
       name: 'The  Flesh is Weak',
       cost: 400,
-      description: `The character's body has undergone significant bionic replacement, trading frail flesh for unyielding metal. The character is more machine than man now, and has the resilience to prove it, though his squad mates might look somewhat sceptically upon his bionically enhanced form.
-      This character gains the Machine (X) Trait, where X is equal to half of the number of Cybernetics he possesses (rounded up), to a maximum of an amount equal to his Toughness Bonus. If he gains a new Cybernetic, the value of the Trait increases to reflect the new Cybernetic. Note that this only applies to Cybernetics such as bionic replacement limbs and organ replacements, sub-systems, and mechadendrites (see page 204 of the Only War Core Rulebook), and not to Traits and Talents that grant similar effects.`,
+      description: `The character's body has undergone significant bionic replacement, trading frail flesh for unyielding metal. The character is more machine than man now, and has the resilience to prove it, though her squad mates might look somewhat sceptically upon her bionically enhanced form.
+      This character gains the Machine (X) Trait, where X is equal to half of the number of Cybernetics she possesses (rounded up), to a maximum of an amount equal to her Toughness Bonus. If she gains a new Cybernetic, the value of the Trait increases to reflect the new Cybernetic. Note that this only applies to Cybernetics such as bionic replacement limbs and organ replacements, sub-systems, and mechadendrites (see page 204 of the Only War Core Rulebook), and not to Traits and Talents that grant similar effects.`,
       isPerk: true,
     },
     {
       name: 'Armor-Monger',
       cost: 200,
-      description: 'The character is a skilled armourer and constantly tinkers and improves his armour or keeps it in pristine shape by repairing the slightest damage it sustains. With years of training, the character has even learned to enhance the protection afforded by his armour and how to use it to its optimum. The character increases the Armour Points of any armour he wears by 1 on all locations it would normally cover, as long as he has at least an hour each day to clean and repair it or make minor modifications. This bonus applies only to armour when worn by the character, as it combines his training as much as his skill at armoury.',
+      description: 'The character is a skilled armourer and constantly tinkers and improves her armour or keeps it in pristine shape by repairing the slightest damage it sustains. With years of training, the character has even learned to enhance the protection afforded by her armour and how to use it to its optimum. The character increases the Armour Points of any armour she wears by 1 on all locations it would normally cover, as long as she has at least an hour each day to clean and repair it or make minor modifications. This bonus applies only to armour when worn by the character, as it combines her training as much as her skill at armoury.',
       isPerk: true,
     },
     {
@@ -244,7 +244,7 @@ class Roko {
       name: 'Potentia Coil Induction',
       cost: 200,
       descrption: `The Crimson Guard are said to be as relentless as machines on the march, capable of making journeys on foot with full kit that other regiments could not manage unburdened. While much of this claim can be attributed to their fearsome reputation, the veteran warriors of the Adeptus Mechanicus can achieve feats far beyond the endurance of frail human flesh by drawing on external reserves of power.
-      The character has learned to feed additional power to his potentia coil through electro inductors and eliminate any weariness or strain he suffers from. When in the presence of a suitable power source, such as a portable generator or the power plant of one of his regiment's fighting vehicles, he may make an Ordinary (+10) Toughness Test and recover from a number of levels of Fatigue equal to the Degrees of Success achieved on the Test.`,
+      The character has learned to feed additional power to her potentia coil through electro inductors and eliminate any weariness or strain she suffers from. When in the presence of a suitable power source, such as a portable generator or the power plant of one of her regiment's fighting vehicles, she may make an Ordinary (+10) Toughness Test and recover from a number of levels of Fatigue equal to the Degrees of Success achieved on the Test.`,
       isPerk: true,
     },
     {
@@ -252,27 +252,27 @@ class Roko {
       cost: 400,
       description: `The potentia coil implanted in the initiates of the Cult Mechanicus is thoroughly integrated with both the biological
       and mechanical components of their frame. This most sacred implant assists in the regulation of everything from the devotee's
-      bioelectric reserves to his heart rate, becoming the lynchpin of his vital functions. In dire circumstances, a hardy servant of the
-      Machine God can draw greater power into his potentia coil to supplement these functions and accelerate his body's healing.
-      The character has learned to feed additional power to his potentia coil through electoo inductors, and can supercharge
+      bioelectric reserves to her heart rate, becoming the lynchpin of her vital functions. In dire circumstances, a hardy servant of the
+      Machine God can draw greater power into her potentia coil to supplement these functions and accelerate her body's healing.
+      The character has learned to feed additional power to her potentia coil through electoo inductors, and can supercharge
       it to maximum capacity to restore lost Wounds. Once per game session when in the presence of a suitable power source,
-      such as a portable generator or the power plant of one of his regiment's fighting vehicles, he may make a Challenging (+0)
-      Toughness Test as a Full Action. If he succeeds, he removes 1d5 Wounds, plus 1 Wound per additional Degree of Success he
-      scores on the Test. He cannot remove Critical Damage this way. However, the restoration process is potentially volatile, and any
-      irregularities in the power feed can have deadly consequences. If he fails the Test, he suffers 1 Damage ignoring armour and
-      Toughness Bonus, plus 1 additional Damage for every three Degrees of Failure he scores on the Test.`,
+      such as a portable generator or the power plant of one of her regiment's fighting vehicles, she may make a Challenging (+0)
+      Toughness Test as a Full Action. If she succeeds, she removes 1d5 Wounds, plus 1 Wound per additional Degree of Success she
+      scores on the Test. She cannot remove Critical Damage this way. However, the restoration process is potentially volatile, and any
+      irregularities in the power feed can have deadly consequences. If she fails the Test, she suffers 1 Damage ignoring armour and
+      Toughness Bonus, plus 1 additional Damage for every three Degrees of Failure she scores on the Test.`,
       isPerk: true,
     },
     {
       name: 'Servo-Arm',
       cost: 250,
-      description: `The Servitor assists in all repairs the Enginseer performs, acting as a natural extension of his will as he communes withh vehicle machine spirits. When assisted by his Servitor, the Enginseer gains a +10 bonus to all Tech-Use Tests to make repairs, and halves the time any repair takes.`,
+      description: `The Servitor assists in all repairs the Enginseer performs, acting as a natural extension of her will as she communes with vehicle machine spirits. When assisted by her Servitor, the Enginseer gains a +10 bonus to all Tech-Use Tests to make repairs, and halves the time any repair takes.`,
       isPerk: true,
     },
     {
       name: 'Field Repairs',
       cost: 300,
-      description: `On the battlefield, the Enginseer links to his Servitor, relaying complex data and instructions, and the Servitor enacts those commands with precision. As long as hhis Servitor is within range of communication, the Enginseer may perform Tech-Use Tests on anything next to the Servitor at a -10 penallty.`,
+      description: `On the battlefield, the Enginseer links to her Servitor, relaying complex data and instructions, and the Servitor enacts those commands with precision. As long as her Servitor is within range of communication, the Enginseer may perform Tech-Use Tests on anything next to the Servitor at a -10 penallty.`,
       isPerk: true,
     },
   ];
@@ -284,7 +284,7 @@ class Roko {
       The character is a servant of the Machine-God, and has access to implants beyond other characters.
       
       ELECTRO-GRAFT
-      The Electro-graft is a small port that is grafted into the nervous system. Once a recipient has been properly trained, this allows him to interface with machine data ports and certain types of data nets. Electro-grafts can take many forms, such as skull shunts, finger probes, or spine jacks.
+      The Electro-graft is a small port that is grafted into the nervous system. Once a recipient has been properly trained, this allows her to interface with machine data ports and certain types of data nets. Electro-grafts can take many forms, such as skull shunts, finger probes, or spine jacks.
 
       ELECTRO INDUCTORS
       Electro Inductors are palm-sized metal skin grafts that appear much like tattoos to the uninitiated. The electros are wired into the nervous system, where they derive power from the bio-electrical emanations of the flesh and the sacred mysteries of the Potenia Coil. They can be used to emit or siphon power in many ways.
@@ -327,7 +327,7 @@ class Roko {
     {
       name: 'Servo-Arm',
       quality: 'Good',
-      description: `A servo-arm allows a lone Tech-Priest to fulfil the functions of an entire repair bay, allowing him to even lift a Chimera armored transport on its side to repair a broken tread link. A properly constructed implanted servo-arm has stabilization and support systems running throughout the Enginseer's body, allowing him to achieve such feats without harming himself in the process. A servo-arm can extend up to 1.5m from its shoulder or back mounting and has a fixed Strength value of 75 with the Unnatural Strength(7) Trait - the servo-arm always uses this value, regardless of the character's Strength Characteristic or Talents. Though incapable of fine manipulation, the servo-arm's powerful claw can be used to lift heavy objects or tether the user to a suitable anchor as a Free Action. In combat, the character can use thhe servo-arm to make a Standard Attack Action or strike with it as his Reaction for the Round (so long as he only uses it once per Round). A servo-arm has the following profile: Melee; 2d10+14 I; Pen 10; Unwieldy. Best Craftsmanship servo-arms have a Strength of 85 with the Unnatural Strength(7) Trait (increasing Damage to 2d10+15). To use an installed servo-arm, a character must hhave the Mechadendrite Use (Utility) Talent. To use it as a weapon, a character must also have the Mechadendrite Use (Weapon) Talent.`,
+      description: `A servo-arm allows a lone Tech-Priest to fulfil the functions of an entire repair bay, allowing her to even lift a Chimera armored transport on its side to repair a broken tread link. A properly constructed implanted servo-arm has stabilization and support systems running throughout the Enginseer's body, allowing her to achieve such feats without harming himself in the process. A servo-arm can extend up to 1.5m from its shoulder or back mounting and has a fixed Strength value of 75 with the Unnatural Strength(7) Trait - the servo-arm always uses this value, regardless of the character's Strength Characteristic or Talents. Though incapable of fine manipulation, the servo-arm's powerful claw can be used to lift heavy objects or tether the user to a suitable anchor as a Free Action. In combat, the character can use the servo-arm to make a Standard Attack Action or strike with it as her Reaction for the Round (so long as she only uses it once per Round). A servo-arm has the following profile: Melee; 2d10+14 I; Pen 10; Unwieldy. Best Craftsmanship servo-arms have a Strength of 85 with the Unnatural Strength(7) Trait (increasing Damage to 2d10+15). To use an installed servo-arm, a character must hhave the Mechadendrite Use (Utility) Talent. To use it as a weapon, a character must also have the Mechadendrite Use (Weapon) Talent.`,
     },
     {
       name: 'Augur Array',
@@ -337,7 +337,7 @@ class Roko {
       Poor systems possess only a single detection ability (either heat, radiation, electromagnetics, or very rarely Daemonic taint) and have the limited range of 20 metres. If the augur is set to detect Daemonic taint, it has the possibility to be overwhelmed and malfunction should a Daemon get too close.
       Good systems function as a full auspex but also allow rerolls on all Perception-based Tests when using its functions. In regards to the Daemonic taint detection, as opposed to the Poor system augur, a Good system cannot be overwhelmed and seems to almost filter out any taint it detects instead of getting backed up by it.`,
       special: [
-        `Auspex/Scanner: The standard Imperial detection device, these are used to detect energy emissions, motion, biological life-signs, and other information. A character using an auspex gains a +20 bonus to Awareness Tests and may make a Tech-Use Test to use it to spot things that would not normally be possible with human senses, such as invisible gases, nearby signs of life, non-visible radiation, or other things as appropriate. The standard range of an auspex is 50m, though walls more than 50cm thick and certain shielding materials can block the scanner. Goof Craftsmanship models increase the bonus to +30, but Poor Craftsmanship models can only penetrate 20cm of material.`,
+        `Auspex/Scanner: The standard Imperial detection device, these are used to detect energy emissions, motion, biological life-signs, and other information. A character using an auspex gains a +20 bonus to Awareness Tests and may make a Tech-Use Test to use it to spot things that would not normally be possible with human senses, such as invisible gases, nearby signs of life, non-visible radiation, or other things as appropriate. The standard range of an auspex is 50m, though walls more than 50cm thick and certain shielding materials can block the scanner. Good Craftsmanship models increase the bonus to +30, but Poor Craftsmanship models can only penetrate 20cm of material.`,
       ]
     },
     {
@@ -348,7 +348,7 @@ class Roko {
     {
       name: 'Dataslate',
       quality: 'Normal',
-      description: `Data-slates are common in the Imperium and are the primary means of storing and reading printed text and other media such as video or audio recordings. They are cheap and easy to make, and many contain a single media recording, such as t ext, and can only play that single file. Others can re-record new information or transmit and receive data from other devices.`,
+      description: `Data-slates are common in the Imperium and are the primary means of storing and reading printed text and other media such as video or audio recordings. They are cheap and easy to make, and many contain a single media recording, such as text, and can only play that single file. Others can re-record new information or transmit and receive data from other devices.`,
     },
     {
       name: 'Omnissian Axe',
@@ -356,7 +356,7 @@ class Roko {
       description: `Granted to suitably devoted followers of the Omnissiah, this weapon has a long staff-like body tipped with half of the circular Adeptus Mechanicus skull and cog icon. The symbol forms a blade and is sheathed in a power field. Covered with inscribed circuitry designs indicating the sacred nature of the weapon, many a foe has realised far too late that what appeared to be a religious walking staff was really a deadly weapon. The Omnissian axe also functions as a combi-tool. This a two-handed melee weapon.
       Omnissian Axe - Melee - 1d10+4 E, 6 pen, power field, unbalanced`,
       special: [
-        `Power Field: A field of power wreathes weapons with this Quality, increasing their Damage and Penetration. Such modifiers are already included in the weapon's profile. When the character successfully use this weapon to Parry an attack made with a weapon that lacks this Quality, he has a 75% chance of destroying his attacker's weapon. Weapons with the Warp Weapon Quality and Natural Weapons are immune to this effect.`,
+        `Power Field: A field of power wreathes weapons with this Quality, increasing their Damage and Penetration. Such modifiers are already included in the weapon's profile. When the character successfully use this weapon to Parry an attack made with a weapon that lacks this Quality, she has a 75% chance of destroying her attacker's weapon. Weapons with the Warp Weapon Quality and Natural Weapons are immune to this effect.`,
         `Unbalanced: Heavy and difficult to ready after an attack, these kinds of weapons cannot be used to make Lighting Attack Actions, and impose a -10 when used to Parry.`
       ]
     },
@@ -368,7 +368,7 @@ class Roko {
     {
       name: 'Ballistic Mechadendrite',
       quality: 'Normal',
-      description: `This solid, shoulder-mounted mechadendrite is designed for selfdefence. This two metre limb may be armed with any Pistol-class weapon with the Compact Upgrade. The character can attack with this weapon as his Reaction. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
+      description: `This solid, shoulder-mounted mechadendrite is designed for selfdefence. This two metre limb may be armed with any Pistol-class weapon with the Compact Upgrade. The character can attack with this weapon as her Reaction. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
     },
     {
       name: 'Lathe Laspistol',
@@ -378,13 +378,13 @@ class Roko {
     {
       name: 'Manipulator Mechadendrite',
       quality: 'Normal',
-      description: `Possibly the most common form of mechadendrite, this artificial limb is a great aid to Enginseers working to repair vehicles in the heat of battle, allowing them to lift greater weights and more easily operate industrial gear. It can extend out to 1.5m and grants the user +20 to Strength-based Tests; the vicious gripping and crushing pincers can also tether the user to gantries or suitably heavy objects as a Free Action. The heavy metal pincers can be used in combat to make melee attacks. The character can strike with it as his Reaction for the Round or use it to make a Standard Attack (so long as it is only used once per Round). The manipulator mechadendrite deals 1d10+2 I Damage.
+      description: `Possibly the most common form of mechadendrite, this artificial limb is a great aid to Enginseers working to repair vehicles in the heat of battle, allowing them to lift greater weights and more easily operate industrial gear. It can extend out to 1.5m and grants the user +20 to Strength-based Tests; the vicious gripping and crushing pincers can also tether the user to gantries or suitably heavy objects as a Free Action. The heavy metal pincers can be used in combat to make melee attacks. The character can strike with it as her Reaction for the Round or use it to make a Standard Attack (so long as it is only used once per Round). The manipulator mechadendrite deals 1d10+2 I Damage.
       While powerful, the manipulator is not subtle, and attempts to use it for such tasks as data-slate typing, inscribing sacrificial etchings, handling delicate objects, or the like only ends with equipment being dropped, smashed, or otherwise ruined. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
     },
     {
       name: 'Utility Mechadendrite',
       quality: 'Normal',
-      description: `This two-metre long limb houses a variety of tools and attachments designed to assist a Tech-Priest in the course of his holy duties. The mechadendrite counts as a combi-tool, granting a +10 bonus to all Tech-Use Tests. The limb also houses six injector pistons, each of which may be filled with one dose of sacred unguent. These can be supplied separately. In addition to this, the limb contains an electrically powered censer, which can gust incense fumes over particularly troublesome faults. The censer generates one “blast” of smoke every fifteen minutes. This can be employed in melee combat to distract and choke, imposing a -5 penalty to Weapon Skill Tests made by all living creatures within a two-metre radius for one Round. This is a Half Action. Unless the censer is deactivated, all Perception Tests made to detect the Tech- Priest that rely on a sense of smell gain a +10 bonus. Finally, the mechadendrite contains a cutting blade. This counts as a knife with the Defensive Quality and Mono upgrade. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
+      description: `This two-metre long limb houses a variety of tools and attachments designed to assist a Tech-Priest in the course of her holy duties. The mechadendrite counts as a combi-tool, granting a +10 bonus to all Tech-Use Tests. The limb also houses six injector pistons, each of which may be filled with one dose of sacred unguent. These can be supplied separately. In addition to this, the limb contains an electrically powered censer, which can gust incense fumes over particularly troublesome faults. The censer generates one “blast” of smoke every fifteen minutes. This can be employed in melee combat to distract and choke, imposing a -5 penalty to Weapon Skill Tests made by all living creatures within a two-metre radius for one Round. This is a Half Action. Unless the censer is deactivated, all Perception Tests made to detect the Tech- Priest that rely on a sense of smell gain a +10 bonus. Finally, the mechadendrite contains a cutting blade. This counts as a knife with the Defensive Quality and Mono upgrade. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
       special: [
         `Knife: melee/thrown, 5m, 1d5 R, 0 pen`,
         `Defensive: A Defensive weapon, such as a shield, is intended to be used to block attacks and is awkward when used to make attacks. Defensive weapons grant a +15 bonus to Tests made when used to Parry, but impose a -10 penalty when used to make attacks.`,
@@ -405,13 +405,13 @@ class Roko {
       name: 'Cybernetic Boost',
       cost: 300,
       description: `Cybernetics are an important part of life for many members of the Imperial Guard, for soldiers often need to replace lost or crippled limbs and organs of vulnerable flesh and blood with assuredly superior appendages and devices of metal and oil. Though most Guardsmen know better than to tamper with these sacred devices, some enterprising (or foolish) individuals have been known to modify the baseline capacities of these devices, allowing them to get a short burst of power by overloading the device in a semi-controlled fashion.
-      As a Half Action, this character may spend a Fate Point and make a Challenging (+0) Tech-Use Test. If he succeeds, he gains either the Unnatural Agility (X) or Unnatural Strength (X) Trait, where X is equal to one, plus one for every two additional Degrees of Success he scores on the Test (or increases existing versions of those Traits by X). These Traits persist for a number of Rounds equal to his Intelligence Bonus. The character may end the effect at any time. At the end of each Round in which the character allows it to persist, he gains 1 level of Fatigue.`,
+      As a Half Action, this character may spend a Fate Point and make a Challenging (+0) Tech-Use Test. If she succeeds, she gains either the Unnatural Agility (X) or Unnatural Strength (X) Trait, where X is equal to one, plus one for every two additional Degrees of Success she scores on the Test (or increases existing versions of those Traits by X). These Traits persist for a number of Rounds equal to her Intelligence Bonus. The character may end the effect at any time. At the end of each Round in which the character allows it to persist, she gains 1 level of Fatigue.`,
       isPerk: true,
     },
     {
       name: 'Cybernetic Calibrations',
       cost: 400,
-      description: `This character, either through initiation into the mysteries of the Omnissiah or tinkering that would certainly attract negative attention from such individuals, has fine-tuned his cybernetic implants to a point of optimization.
+      description: `This character, either through initiation into the mysteries of the Omnissiah or tinkering that would certainly attract negative attention from such individuals, has fine-tuned her cybernetic implants to a point of optimization.
       All of this character's Cybernetics count as being one level of Craftsmanship higher than their base Craftsmanship (so, for instance, a Poor Craftsmanship bionic arm would become Common Craftsmanship, or a Good Craftsmanship limb would become Best Craftsmanship).
       `,
       isPerk: true,
@@ -419,19 +419,19 @@ class Roko {
     {
       name: 'Redundant Systems',
       cost: 300,
-      description: `The Enginseer Prime gains an extra Servitor. He can seelect this Advance up to a number of times equal to his Intelligence Bonus.`,
+      description: `The Enginseer Prime gains an extra Servitor. She can select this Advance up to a number of times equal to her Intelligence Bonus.`,
       isPerk: false,
     },
     {
       name: 'Coordination Algorithms',
       cost: 300,
-      description: `The Enginseer Prime optimises his Servitors to assist him in tandem, each mechanical minion acting a cog with a greater machine. When two or more Servitors assist him on a Tech-Use Test via the Servo-Arm Comrade Advance, he gains an additional +5 bonus for each Servitor that assists beyond the first.`,
+      description: `The Enginseer Prime optimises her Servitors to assist her in tandem, each mechanical minion acting a cog with a greater machine. When two or more Servitors assist her on a Tech-Use Test via the Servo-Arm Comrade Advance, she gains an additional +5 bonus for each Servitor that assists beyond the first.`,
       isPerk: false,
     },
     {
       name: 'Machine Lord',
       cost: 600,
-      description: `The Enginseer Prime can assume precise control over his Servitors, using them to strike down his foes. Once during eachh of his Turns, the Enginseer Prime may make a Challenging (+0) Tech-Use Test as a Half Action. If he succeeds, he can have up to one of his Servitors, plus one additional Servitor per Degree of Success he scores beyond the first, make a Half Action Melee Attack Action or Ranged Attack Action against a target within range. For this attack, the Servitor uses thhe Enginseer Prime's Weapon Skill or Ballistic Skill in place of its own relevant Characteristic.`,
+      description: `The Enginseer Prime can assume precise control over her Servitors, using them to strike down her foes. Once during eachh of her Turns, the Enginseer Prime may make a Challenging (+0) Tech-Use Test as a Half Action. If she succeeds, she can have up to one of her Servitors, plus one additional Servitor per Degree of Success she scores beyond the first, make a Half Action Melee Attack Action or Ranged Attack Action against a target within range. For this attack, the Servitor uses the Enginseer Prime's Weapon Skill or Ballistic Skill in place of its own relevant Characteristic.`,
       isPerk: false,
     },
     {
@@ -449,13 +449,13 @@ class Roko {
     {
       name: 'True Grit',
       cost: 400,
-      description: 'The character is able to shrug off wounds that would fell lesser men. Whenever the character suffers Critical Damage (after reduction for Armour and Toughness), reduce the amount by his Toughness Bonus (to a minimum of 1).',
+      description: 'The character is able to shrug off wounds that would fell lesser men. Whenever the character suffers Critical Damage (after reduction for Armour and Toughness), reduce the amount by her Toughness Bonus (to a minimum of 1).',
       isPerk: true,
     },
     {
       name: 'Foresight',
       cost: 300,
-      description: `Logic and analysis do for the character what animal entrails and the bones claim to do for the superstitious masses. By careful consideration of all the possible consequences and examination of all evidence and information, the character can identify the best path for success. By spending ten minutes studying or analyzing a problem, the character gains a +10 bonus to his next Intelligence Test or a Skill Test based on Intelligence.`,
+      description: `Logic and analysis do for the character what animal entrails and the bones claim to do for the superstitious masses. By careful consideration of all the possible consequences and examination of all evidence and information, the character can identify the best path for success. By spending ten minutes studying or analyzing a problem, the character gains a +10 bonus to her next Intelligence Test or a Skill Test based on Intelligence.`,
       isPerk: true,
     },
     {
@@ -473,14 +473,14 @@ class Roko {
     {
       name: 'Weapon Training(Projectile)',
       cost: 0,
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
+      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group she has selected with this Talent. When a character attempts to use a weapon she does not have the correct Weapon Training Talent for, she suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if she has both Weapon Training in the appropriate group and Weapon Training (Heavy).
       This Talent may be taken more than once, each time with a different specialization.`,
       isPerk: false,
     },
     {
       name: 'Weapon Training(Heavy)',
       cost: 0,
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group he has selected with this Talent. When a character attempts to use a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if he has both Weapon Training in the appropriate group and Weapon Training (Heavy).
+      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group she has selected with this Talent. When a character attempts to use a weapon she does not have the correct Weapon Training Talent for, she suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if she has both Weapon Training in the appropriate group and Weapon Training (Heavy).
       This Talent may be taken more than once, each time with a different specialization.`,
       isPerk: false,
     },
