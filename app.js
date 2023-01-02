@@ -6,15 +6,22 @@ class Roko {
   damage = 0;
   wounds = `${this.maxWounds - this.damage}`;
 
+  movement = `
+  Half move: 3m
+  Full move: 6m
+  Charge: 9m
+  Run: 18m
+  `;
   armor = 5 + 4 + 6 + 1 // 16
   implants = 8; // implants benefit to 10
-
-  fate = 3;
+  carry = 6/45
+  fate = 1/3;
   // 4 requisition rolls
   XP = {
     base: 2800,
-    advanced: 500,// 800 remaining
-    total: base + advanced,
+    advanced: 500,// 3300
+    unspent: 525,// 1050 for immunity to suppressing fire pinning
+    total: base + advanced + unspent,
   };
 
   aptitudes = [
@@ -29,6 +36,7 @@ class Roko {
   ];
 
   homeworld = {
+    name: 'Shinot',
     type: 'Frontier World',
     command: 'Maverick',
     regimentType: 'Grenadier',
@@ -44,6 +52,7 @@ class Roko {
       base: 32,
       bonuses: 3 + 3,
       purchased: 5,
+      cost: 250,
     },
     weapons: {
       mod: Math.floor(total / 10),
@@ -72,6 +81,7 @@ class Roko {
       base: 39,
       bonuses: 3,
       purchased: 10,
+      cost: 350,
     },
     perception: {
       mod: Math.floor(total / 10),
@@ -86,6 +96,7 @@ class Roko {
       base: 35,
       bonuses: 5,
       purchased: 10,
+      cost: 350,
     },
     willpower: {
       mod: Math.floor(total / 10),
@@ -148,16 +159,19 @@ class Roko {
       name: 'Trade (Armorer)',
       tier: 1,
       description: 'N/A',
+      cost: 100,
     },
     {
       name: 'Commerce',
       tier: 1,
       description: 'N/A',
+      cost: 100,
     },
     {
       name: 'Parry',
       tier: 1,
       description: 'N/A',
+      cost: 100,
     }
   ];
 
@@ -170,7 +184,7 @@ class Roko {
       • Utility: Including such varied types as Machine Spirit Interface, Manipulator, Medicae, Utility, Optical, and countless others, these Mechadendrites generally require less hardy mountings, but all interface with the Cyber Mantle in a similar manner.`,
     },
     {
-      name: 'Weapon Training (Las, Power)',
+      name: 'Weapon Training (Las, Power, Launcher)',
       description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group she has selected with this Talent. When a character attempts to use a weapon she does not have the correct Weapon Training Talent for, she suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if she has both Weapon Training in the appropriate group and Weapon Training (Heavy).
       This Talent may be taken more than once, each time with a different specialization.`,
     },
@@ -198,11 +212,6 @@ class Roko {
     {
       name: 'Resistance (fear)',
       description: `The character's background, experience, training, exposure or plain stubbornness has developed a resistance within her. Each time the character selects this Talent, choose one area of resistance. The character gains a +10 bonus when making Tests to resist effects of this type. The GM may wish to approve certain choices or have them justified by the character's past.`,
-    },
-    {
-      name: 'Weapon Training (launchers)',
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group she has selected with this Talent. When a character attempts to use a weapon she does not have the correct Weapon Training Talent for, she suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if she has both Weapon Training in the appropriate group and Weapon Training (Heavy).
-      This Talent may be taken more than once, each time with a different specialization.`,
     },
     {
       name: 'Hatred (8th Gavlax Lancers)',
@@ -348,11 +357,13 @@ class Roko {
     {
       name: 'Dataslate',
       quality: 'Normal',
+      weight: 0.5,
       description: `Data-slates are common in the Imperium and are the primary means of storing and reading printed text and other media such as video or audio recordings. They are cheap and easy to make, and many contain a single media recording, such as text, and can only play that single file. Others can re-record new information or transmit and receive data from other devices.`,
     },
     {
-      name: 'Omnissian Axe',
+      name: 'Omnissian Axe (AT HOME)',
       quality: 'Normal',
+      weight: 8,
       description: `Granted to suitably devoted followers of the Omnissiah, this weapon has a long staff-like body tipped with half of the circular Adeptus Mechanicus skull and cog icon. The symbol forms a blade and is sheathed in a power field. Covered with inscribed circuitry designs indicating the sacred nature of the weapon, many a foe has realised far too late that what appeared to be a religious walking staff was really a deadly weapon. The Omnissian axe also functions as a combi-tool. This a two-handed melee weapon.
       Omnissian Axe - Melee - 1d10+4 E, 6 pen, power field, unbalanced`,
       special: [
@@ -376,6 +387,63 @@ class Roko {
       description: 'Pistol, 40m range, S/2/- 1d10+6 E, 2 pen, N/A clip, N/A reload, tearing',
     },
     {
+      name: 'Auxilary grenade launcher weapon',
+      quality: 'Normal',
+      description: 'Shooty',
+    },
+    {
+      name: 'Frag grenade',
+      weight: 0.5,
+      quantity: 1,
+      description: 'boom',
+    },
+    {
+      name: 'Krak grenade',
+      weight: 0.5,
+      quantity: 1,
+      description: 'boom',
+    },
+    {
+      name: 'Smoke grenade',
+      weight: 0.5,
+      quantity: 1,
+      description: 'boom',
+    },
+    {
+      name: 'Fire grenade',
+      weight: 0.5,
+      quantity: 1,
+      description: 'boom',
+    },
+    {
+      name: 'Triplex pattern lasgun',
+      weight: 4.5,
+      quality: 'Normal',
+      description: 'boom',
+    },
+    {
+      name: 'Las pistol',
+      weight: 1.5,
+      quality: 'Normal',
+      description: 'boom',
+    },
+    {
+      name: 'Basic charge pack',
+      quantity: 4,
+      description: 'Battery',
+    },
+    {
+      name: 'Pistol charge pack',
+      quantity: 2,
+      description: 'Battery',
+    },
+    {
+      name: 'Knife',
+      weight: 1,
+      quality: 'Normal',
+      description: 'Stabby',
+    },
+    {
       name: 'Manipulator Mechadendrite',
       quality: 'Normal',
       description: `Possibly the most common form of mechadendrite, this artificial limb is a great aid to Enginseers working to repair vehicles in the heat of battle, allowing them to lift greater weights and more easily operate industrial gear. It can extend out to 1.5m and grants the user +20 to Strength-based Tests; the vicious gripping and crushing pincers can also tether the user to gantries or suitably heavy objects as a Free Action. The heavy metal pincers can be used in combat to make melee attacks. The character can strike with it as her Reaction for the Round or use it to make a Standard Attack (so long as it is only used once per Round). The manipulator mechadendrite deals 1d10+2 I Damage.
@@ -391,6 +459,11 @@ class Roko {
         `Mono: Mono weapons have specially fashioned blades with superfine edges that can easily cut through armour and never lose their edge. Mono weapons no longer count as Primitive and add a +2 bonus to their Penetration. The mono upgrade can be applied to a power weapon, but it has no effect whilst the power field is active. If the power field is ever lost or deactivated, the mono upgrade's bonuses then apply.`,
       ]
     },
+    {
+      name: 'Light carapace armor',
+      quality: 'Best quality',
+      description: 'AP 5, weight 7.5'
+    }
   ];
 
   wishlistGear = [
@@ -398,6 +471,7 @@ class Roko {
     'Luminen Capacitor',
     'Maglev Coils',
     'Medicae Mechadendrite',
+    'Optical Mechadendrite',
   ];
 
   wishlistPerks = [
@@ -487,20 +561,9 @@ class Roko {
   ];
 
   starterKit = `
-Auxilary grenade launcher weapon
-1 Frag Grenade
-1 Krak grenade
-1 Smoke grenade
-1 fire bomb grenade
-Triplex Pattern lasgun
-4 basic laspacks
-laspistol
-2 pistol laspacks
-Light carapace armor (best quality)
 Deadspace earpiece
 Uniform
 Poor weather gear
-Knife
 Rucksack/sling bag
 basic tools
 mess kit
@@ -514,4 +577,32 @@ Imperial infantrymans' uplifting primer
 2 weeks Combat sustenance rations
 1 Fluff item
   `
+};
+
+class Robot {
+  name = undefined;
+
+  health = 'uninjured';
+
+  gun = {
+    description: 'Heavy, 100m, -/-/10, 1d10+3 E, Pen 1, Clip 50/90, Reload 2 Full, Lance, Felling (2)'
+  };
+
+  directives = [
+    {
+      name: 'Heavy Firepower Assault',
+      type: 'Attack Order (Full Action)',
+      effect: `As part of this order, the character's comrade takes a standard ranged attack action, semi-auto burst action, or full auto burst action with one weapon against a target within range of that weapon. The character must be within cohesion to enact this order.`,
+    },
+    {
+      name: 'Heavy Suppression Barrage',
+      type: 'Attack Order (Full Action)',
+      effect: `This order can only be issued to servitor comrades outfitted with a weapon capable of semi- or fully automatic  fire. As part of this order, the character designates a kill zone, which is any general area such as a corridor or tree line, that encompasses a 45 degree arc in the direction the comrade is facing. Then, as part of the order, the comrade unleashes suppressing fire.`,
+    },
+    {
+      name: 'Precision Firepower Delivery',
+      type: 'Attack Order (Full Action)',
+      effect: `This order may only be issued to servitor comrades outfitted with a weapon capable of firing single shots. As part of this order, the character's comrade makes a standard ranged attack action against a target within range with its integrated heavy weapon, which is used for  the attack. The servitor must be within communication range to enact this order.`,
+    },
+  ] // want Praetorian Servitor Chassis
 };
