@@ -336,7 +336,7 @@ class Roko {
     {
       name: 'Servo-Arm',
       quality: 'Good',
-      description: `A servo-arm allows a lone Tech-Priest to fulfil the functions of an entire repair bay, allowing her to even lift a Chimera armored transport on its side to repair a broken tread link. A properly constructed implanted servo-arm has stabilization and support systems running throughout the Enginseer's body, allowing her to achieve such feats without harming himself in the process. A servo-arm can extend up to 1.5m from its shoulder or back mounting and has a fixed Strength value of 75 with the Unnatural Strength(7) Trait - the servo-arm always uses this value, regardless of the character's Strength Characteristic or Talents. Though incapable of fine manipulation, the servo-arm's powerful claw can be used to lift heavy objects or tether the user to a suitable anchor as a Free Action. In combat, the character can use the servo-arm to make a Standard Attack Action or strike with it as her Reaction for the Round (so long as she only uses it once per Round). A servo-arm has the following profile: Melee; 2d10+14 I; Pen 10; Unwieldy. Best Craftsmanship servo-arms have a Strength of 85 with the Unnatural Strength(7) Trait (increasing Damage to 2d10+15). To use an installed servo-arm, a character must hhave the Mechadendrite Use (Utility) Talent. To use it as a weapon, a character must also have the Mechadendrite Use (Weapon) Talent.`,
+      description: `A servo-arm allows a lone Tech-Priest to fulfil the functions of an entire repair bay, allowing her to even lift a Chimera armored transport on its side to repair a broken tread link. A properly constructed implanted servo-arm has stabilization and support systems running throughout the Enginseer's body, allowing her to achieve such feats without harming himself in the process. A servo-arm can extend up to 1.5m from its shoulder or back mounting and has a fixed Strength value of 75 with the Unnatural Strength(7) Trait - the servo-arm always uses this value, regardless of the character's Strength Characteristic or Talents. Though incapable of fine manipulation, the servo-arm's powerful claw can be used to lift heavy objects or tether the user to a suitable anchor as a Free Action. In combat, the character can use the servo-arm to make a Standard Attack Action or strike with it as her Reaction for the Round (so long as she only uses it once per Round). A servo-arm has the following profile: Melee; 2d10+14 I; Pen 10; Unwieldy. Best Craftsmanship servo-arms have a Strength of 85 with the Unnatural Strength(7) Trait (increasing Damage to 2d10+15). To use an installed servo-arm, a character must have the Mechadendrite Use (Utility) Talent. To use it as a weapon, a character must also have the Mechadendrite Use (Weapon) Talent.`,
     },
     {
       name: 'Augur Array',
@@ -406,7 +406,7 @@ class Roko {
     {
       name: 'Smoke grenade',
       weight: 0.5,
-      quantity: 1,
+      quantity: 0,
       description: 'boom',
     },
     {
