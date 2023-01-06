@@ -14,13 +14,13 @@ class Roko {
   `;
   armor = 5 + 4 + 6 + 1 // 16
   implants = 8; // implants benefit to 10
-  carry = 6/45
-  fate = 1/3;
+  carry = 6 / 45
+  fate = 1 / 3;
   // 4 requisition rolls
   XP = {
     base: 2800,
-    advanced: 500,// 3300
-    unspent: 525,// 1050 for immunity to suppressing fire pinning
+    advanced: 1000,// 3300
+    unspent: 325,// 1050 for immunity to suppressing fire pinning
     total: base + advanced + unspent,
   };
 
@@ -172,7 +172,19 @@ class Roko {
       tier: 1,
       description: 'N/A',
       cost: 100,
-    }
+    },
+    {
+      name: 'Forbidden Lore(Xenotech)',
+      tier: 1,
+      cost: 100,
+      description: 'string',
+    },
+    {
+      name: 'Security',
+      tier: 1,
+      cost: 100,
+      description: 'string',
+    },
   ];
 
   talents = [
@@ -464,6 +476,9 @@ class Roko {
       quality: 'Best quality',
       description: 'AP 5, weight 7.5'
     }
+  ];
+
+  orders = [
   ];
 
   wishlistGear = [
