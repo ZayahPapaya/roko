@@ -12,15 +12,14 @@ class Roko {
   Charge: 9m
   Run: 18m
   `;
-  armor = 5 + 4 + 6 + 1 // 16
-  implants = 8; // implants benefit to 10
+  armor = 5 + 5 + 6 + 1 // 17
+  implants = 9; // implants benefit to 10
   carry = 6 / 45
-  fate = 1 / 3;
-  // 4 requisition rolls
+  fate = 3 / 3;
   XP = {
     base: 2800,
-    advanced: 1000,// 3300
-    unspent: 325,// 1050 for immunity to suppressing fire pinning
+    advanced: 1450,
+    unspent: 175,// 1050 for immunity to suppressing fire pinning
     total: base + advanced + unspent,
   };
 
@@ -296,6 +295,13 @@ class Roko {
       description: `On the battlefield, the Enginseer links to her Servitor, relaying complex data and instructions, and the Servitor enacts those commands with precision. As long as her Servitor is within range of communication, the Enginseer may perform Tech-Use Tests on anything next to the Servitor at a -10 penallty.`,
       isPerk: true,
     },
+    {
+      name: 'Redundant Systems',
+      quantity: '2',
+      cost: 300,
+      description: `The Enginseer Prime gains an extra Servitor. She can select this Advance up to a number of times equal to her Intelligence Bonus.`,
+      isPerk: false,
+    },
   ];
 
   traits = [
@@ -314,7 +320,7 @@ class Roko {
       A Respirator Unit implant involves tubes, wires, voxgrills, or other augmetic parts replacing the neck and upper chest. The unit purifies the air supply, granting a +20 bonus to resist airborne toxins and gas weapons. The respirator unit also contains a vox-synthesiser capable of transmitting the voice in a variety of ways.
 
       CYBER-MANTLE
-      The Cyber-mantle is a framework of metal, wires, and impulse transmitters bolted onto the spine and lower ribcage. As the initiate gains further implants, this mantle acts as a sub-dermal anchorage point. Amongst some servants of the Omnissiah, this cyber-mantle is often referred to as “the true flesh.”
+      The Cyber-mantle is a framework of metal, wires, and impulse transmitters bolted onto the spine and lower ribcage. As the initiate gains further implants, this mantle acts as a sub-dermal anchorage point. Amongst some servants of the Omnissiah, this cyber-mantle is often referred to as "the true flesh."
 
       POTENTIA COIL
       Cradled within the cyber-mantle is a power unit known as the Potentia Coil. This mass can store energy and produce various types of fields. Coils come in many types, from small crystal stack affairs to bulky electrical galvinators.
@@ -330,8 +336,6 @@ class Roko {
   ];
 
   gear = [
-    // Subdermal Armor
-    // Luminen Capacitors
     {
       name: 'Mind Impulse Unit',
       quality: 'Good',
@@ -401,31 +405,31 @@ class Roko {
     {
       name: 'Auxilary grenade launcher weapon',
       quality: 'Normal',
-      description: 'Shooty',
+      description: 'Loaded with Krak grenade',
     },
     {
       name: 'Frag grenade',
       weight: 0.5,
       quantity: 1,
-      description: 'boom',
+      description: 'anti-infantry',
     },
     {
       name: 'Krak grenade',
       weight: 0.5,
       quantity: 1,
-      description: 'boom',
+      description: 'anti-tank',
     },
     {
       name: 'Smoke grenade',
       weight: 0.5,
-      quantity: 0,
-      description: 'boom',
+      quantity: 1,
+      description: 'Smoke',
     },
     {
       name: 'Fire grenade',
       weight: 0.5,
       quantity: 1,
-      description: 'boom',
+      description: 'Molotov',
     },
     {
       name: 'Triplex pattern lasgun',
@@ -472,10 +476,15 @@ class Roko {
       ]
     },
     {
+      name: 'Optical Mechadendrite',
+      quality: 'Normal',
+      description: `This highly flexible mechadendrite, set with pict-capture and sensor devices, is designed to assist in the inspection and detection. This mechadendrite extends to a length of 3 metres and can reduce its width to a pencil thickness. It grants a +10 bonus to all Perception-based Tests. The pict-device mounted on the mechadendrite allow the user to examine surfaces at a microscopic level or may be used as a telescopic sight. This mechadendrite is also mounted with an infra-red torch and sensors. A character using this mechadendrite suffers no penalties due to darkness and gains a +20 bonus to Vision-based Perception Tests at night. Finally, the mechadendrite is fitted with a light that may be tinted a variety of different colours depending on the controller's whim. This mechadendrite may be shoulder or sternum-mounted. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
+    },
+    {
       name: 'Light carapace armor',
       quality: 'Best quality',
       description: 'AP 5, weight 7.5'
-    }
+    },
   ];
 
   orders = [
@@ -548,12 +557,6 @@ class Roko {
       isPerk: true,
     },
     {
-      name: 'Xeno-Tech',
-      cost: 100,
-      description: 'N/A',
-      isPerk: false,
-    },
-    {
       name: 'Iron Jaw',
       cost: 200,
       description: `The character has taken blows from Orks and given back as good as they got. The character can bounce back from most strikes without ill effects. If ever Stunned, a successful Toughness Test allows the character to ignore the effects.`,
@@ -600,7 +603,7 @@ class Robot {
   health = 'uninjured';
 
   gun = {
-    description: 'Heavy, 100m, -/-/10, 1d10+3 E, Pen 1, Clip 50/90, Reload 2 Full, Lance, Felling (2)'
+    description: 'Heavy, 100m, -/-/10, 1d10+3 E, Pen 1, Clip 50/90, Reload 2 Full, Lance, Felling (2)',
   };
 
   directives = [
