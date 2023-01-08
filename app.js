@@ -151,8 +151,9 @@ class Roko {
     },
     {
       name: 'Tech-Use',
-      tier: 2, // two tech-use perks
+      tier: 3, // two tech-use perks
       description: 'string',
+      cost: 300,
     },
     {
       name: 'Trade (Armorer)',
@@ -297,7 +298,7 @@ class Roko {
     },
     {
       name: 'Redundant Systems',
-      quantity: '2',
+      quantity: '1',
       cost: 300,
       description: `The Enginseer Prime gains an extra Servitor. She can select this Advance up to a number of times equal to her Intelligence Bonus.`,
       isPerk: false,
