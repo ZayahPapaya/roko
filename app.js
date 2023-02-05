@@ -18,8 +18,8 @@ class Roko {
   fate = 3 / 3;
   XP = {
     base: 2800,
-    advanced: 1450,
-    unspent: 175,// 1050 for immunity to suppressing fire pinning
+    advanced: 1925,
+    unspent: 175,
     total: base + advanced + unspent,
   };
 
@@ -145,7 +145,7 @@ class Roko {
       description: 'string',
     },
     {
-      name: 'Forbidden Lore(Archaeotech)',
+      name: 'Forbidden Lore (Archaeotech)',
       tier: 1,
       description: 'string',
     },
@@ -167,12 +167,12 @@ class Roko {
       description: 'N/A',
       cost: 100,
     },
-    {
-      name: 'Parry',
-      tier: 1,
-      description: 'N/A',
-      cost: 100,
-    },
+    // {
+    //   name: 'Parry',
+    //   tier: 1,
+    //   description: 'N/A',
+    //   cost: 100,
+    // },
     {
       name: 'Forbidden Lore(Xenotech)',
       tier: 1,
@@ -516,8 +516,8 @@ class Roko {
       isPerk: true,
     },
     {
-      name: 'Redundant Systems',
-      cost: 300,
+      name: 'Redundant Systems * 2',
+      cost: 300 + 300,
       description: `The Enginseer Prime gains an extra Servitor. She can select this Advance up to a number of times equal to her Intelligence Bonus.`,
       isPerk: false,
     },
