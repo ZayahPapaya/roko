@@ -18,8 +18,8 @@ class Roko {
   fate = 3 / 3;
   XP = {
     base: 2800,
-    advanced: 1925,
-    unspent: 175,
+    advanced: 2375,
+    unspent: 625,
     total: base + advanced + unspent,
   };
 
@@ -298,7 +298,7 @@ class Roko {
     },
     {
       name: 'Redundant Systems',
-      quantity: '1',
+      quantity: '2',
       cost: 300,
       description: `The Enginseer Prime gains an extra Servitor. She can select this Advance up to a number of times equal to her Intelligence Bonus.`,
       isPerk: false,
