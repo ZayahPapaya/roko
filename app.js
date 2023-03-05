@@ -3,7 +3,7 @@ class Roko {
   regiment = 'Dragoons';
 
   maxWounds = 12;
-  damage = 0;
+  damage = 4;
   wounds = `${this.maxWounds - this.damage}`;
 
   movement = `
@@ -15,11 +15,11 @@ class Roko {
   armor = 5 + 5 + 6 + 1 // 17
   implants = 9; // implants benefit to 10
   carry = 6 / 45
-  fate = 3 / 3;
+  fate = 0 / 3;
   XP = {
     base: 2800,
-    advanced: 2375,
-    unspent: 625,
+    advanced: 2875,
+    unspent: 525,
     total: base + advanced + unspent,
   };
 
@@ -303,6 +303,13 @@ class Roko {
       description: `The Enginseer Prime gains an extra Servitor. She can select this Advance up to a number of times equal to her Intelligence Bonus.`,
       isPerk: false,
     },
+    {
+      name: 'Machine Lord',
+      cost: 600,
+      description: `The Enginseer Prime can assume precise control over her Servitors, using them to strike down her foes. Once during each of her Turns, the Enginseer Prime may make a Challenging (+0) Tech-Use Test as a Half Action. If she succeeds, she can have up to one of her Servitors, plus one additional Servitor per Degree of Success she scores beyond the first, make a Half Action Melee Attack Action or Ranged Attack Action against a target within range. For this attack, the Servitor uses the Enginseer Prime's Weapon Skill or Ballistic Skill in place of its own relevant Characteristic.`,
+      isPerk: false,
+      roll: `(50 - 1d100 + 20 + 10 + 10)/10`
+    },
   ];
 
   traits = [
@@ -530,7 +537,7 @@ class Roko {
     {
       name: 'Machine Lord',
       cost: 600,
-      description: `The Enginseer Prime can assume precise control over her Servitors, using them to strike down her foes. Once during eachh of her Turns, the Enginseer Prime may make a Challenging (+0) Tech-Use Test as a Half Action. If she succeeds, she can have up to one of her Servitors, plus one additional Servitor per Degree of Success she scores beyond the first, make a Half Action Melee Attack Action or Ranged Attack Action against a target within range. For this attack, the Servitor uses the Enginseer Prime's Weapon Skill or Ballistic Skill in place of its own relevant Characteristic.`,
+      description: `The Enginseer Prime can assume precise control over her Servitors, using them to strike down her foes. Once during each of her Turns, the Enginseer Prime may make a Challenging (+0) Tech-Use Test as a Half Action. If she succeeds, she can have up to one of her Servitors, plus one additional Servitor per Degree of Success she scores beyond the first, make a Half Action Melee Attack Action or Ranged Attack Action against a target within range. For this attack, the Servitor uses the Enginseer Prime's Weapon Skill or Ballistic Skill in place of its own relevant Characteristic.`,
       isPerk: false,
     },
     {
