@@ -3,7 +3,7 @@ class Roko {
   regiment = 'Dragoons';
 
   maxWounds = 12;
-  damage = 4;
+  damage = 0;
   wounds = `${this.maxWounds - this.damage}`;
 
   movement = `
@@ -12,13 +12,13 @@ class Roko {
   Charge: 9m
   Run: 18m
   `;
-  armor = 5 + 5 + 6 + 1 // 17
-  implants = 9; // implants benefit to 10
+  armor = 5 + 5 + 6 + 1 + 2 // 19, 17 on head
+  implants = 11; // implants benefit to 10
   carry = 6 / 45
-  fate = 0 / 3;
+  fate = 3 / 3;
   XP = {
     base: 2800,
-    advanced: 2875,
+    advanced: 3375,
     unspent: 525,
     total: base + advanced + unspent,
   };
@@ -93,9 +93,9 @@ class Roko {
       mod: Math.floor(total / 10),
       total: base + bonuses + purchased,
       base: 35,
-      bonuses: 5,
-      purchased: 10,
-      cost: 350,
+      bonuses: 10,
+      purchased: 15,
+      cost: 550,
     },
     willpower: {
       mod: Math.floor(total / 10),
@@ -120,7 +120,7 @@ class Roko {
       },
       {
         name: 'Intelligence +10',
-        cost: 350,
+        cost: 550,
         description: 'N/A',
         isPerk: false,
       },
@@ -242,7 +242,7 @@ class Roko {
       description: 'string',
     },
     {
-      name: 'The  Flesh is Weak',
+      name: 'The Flesh is Weak',
       cost: 400,
       description: `The character's body has undergone significant bionic replacement, trading frail flesh for unyielding metal. The character is more machine than man now, and has the resilience to prove it, though her squad mates might look somewhat sceptically upon her bionically enhanced form.
       This character gains the Machine (X) Trait, where X is equal to half of the number of Cybernetics she possesses (rounded up), to a maximum of an amount equal to her Toughness Bonus. If she gains a new Cybernetic, the value of the Trait increases to reflect the new Cybernetic. Note that this only applies to Cybernetics such as bionic replacement limbs and organ replacements, sub-systems, and mechadendrites (see page 204 of the Only War Core Rulebook), and not to Traits and Talents that grant similar effects.`,
@@ -308,8 +308,14 @@ class Roko {
       cost: 600,
       description: `The Enginseer Prime can assume precise control over her Servitors, using them to strike down her foes. Once during each of her Turns, the Enginseer Prime may make a Challenging (+0) Tech-Use Test as a Half Action. If she succeeds, she can have up to one of her Servitors, plus one additional Servitor per Degree of Success she scores beyond the first, make a Half Action Melee Attack Action or Ranged Attack Action against a target within range. For this attack, the Servitor uses the Enginseer Prime's Weapon Skill or Ballistic Skill in place of its own relevant Characteristic.`,
       isPerk: false,
-      roll: `(50 - 1d100 + 20 + 10 + 10)/10`
+      roll: `(60 - 1d100 + 20 + 10 + 10)/10`
     },
+    {
+      name: `Lasgun Volley`,
+      cost: 200,
+      description: `For each Comrade who is  part of any Ranged Volley Order this character issues, this character deals +1 additional Damage (to a maximum of +3 Damage) with any attack he makes with a las weapon for that Round in addition to the normal benefit.`,
+      isPerk: true,
+    }
   ];
 
   traits = [
@@ -436,7 +442,7 @@ class Roko {
     {
       name: 'Fire grenade',
       weight: 0.5,
-      quantity: 1,
+      quantity: 2,
       description: 'Molotov',
     },
     {
@@ -493,17 +499,24 @@ class Roko {
       quality: 'Best quality',
       description: 'AP 5, weight 7.5'
     },
+    {
+      name: `Subskin Armor`,
+      quality: `Normal`,
+      description: `This carapace plating is inserted under the skin in various locations, giving the user added protection against damage. While not as impressive as most augmentations and sometimes uncomfortable, subskin armor is very reliable. This implant adds +2 Armour Points to the Arms, Body, and Legs locations. The bonus is added  to any other Armour Points for these locations.`,
+    },
+    {
+      name: `Ocular Sight`,
+      quality: `Normal`,
+      description: `An ocular sight is an implant that grants the same benefits as a cybernetic eye. Until it is activated, this is the only benefit it provides. A character with an ocular sight can activate (or deactivate) its combat mode as a Half Action. When she does, she gains the Unnatural Ballistic Skill (1) Trait but suffers a -20 penalty to Awareness Tests while it is active as her vision tunnels in to focus on her targets. Further, while it is active, she cannot benefit from any sight attached to her gun.`,
+    },
   ];
 
   orders = [
   ];
 
   wishlistGear = [
-    'Subdermal Armor',
     'Luminen Capacitor',
     'Maglev Coils',
-    'Medicae Mechadendrite',
-    'Optical Mechadendrite',
   ];
 
   wishlistPerks = [
@@ -523,27 +536,9 @@ class Roko {
       isPerk: true,
     },
     {
-      name: 'Redundant Systems * 2',
-      cost: 300 + 300,
-      description: `The Enginseer Prime gains an extra Servitor. She can select this Advance up to a number of times equal to her Intelligence Bonus.`,
-      isPerk: false,
-    },
-    {
       name: 'Coordination Algorithms',
       cost: 300,
       description: `The Enginseer Prime optimises her Servitors to assist her in tandem, each mechanical minion acting a cog with a greater machine. When two or more Servitors assist her on a Tech-Use Test via the Servo-Arm Comrade Advance, she gains an additional +5 bonus for each Servitor that assists beyond the first.`,
-      isPerk: false,
-    },
-    {
-      name: 'Machine Lord',
-      cost: 600,
-      description: `The Enginseer Prime can assume precise control over her Servitors, using them to strike down her foes. Once during each of her Turns, the Enginseer Prime may make a Challenging (+0) Tech-Use Test as a Half Action. If she succeeds, she can have up to one of her Servitors, plus one additional Servitor per Degree of Success she scores beyond the first, make a Half Action Melee Attack Action or Ranged Attack Action against a target within range. For this attack, the Servitor uses the Enginseer Prime's Weapon Skill or Ballistic Skill in place of its own relevant Characteristic.`,
-      isPerk: false,
-    },
-    {
-      name: 'Tech-use +20',
-      cost: 300,
-      description: 'N/A',
       isPerk: false,
     },
     {
@@ -570,20 +565,6 @@ class Roko {
       description: `The character has taken blows from Orks and given back as good as they got. The character can bounce back from most strikes without ill effects. If ever Stunned, a successful Toughness Test allows the character to ignore the effects.`,
       isPerk: true,
     },
-    {
-      name: 'Weapon Training(Projectile)',
-      cost: 0,
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group she has selected with this Talent. When a character attempts to use a weapon she does not have the correct Weapon Training Talent for, she suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if she has both Weapon Training in the appropriate group and Weapon Training (Heavy).
-      This Talent may be taken more than once, each time with a different specialization.`,
-      isPerk: false,
-    },
-    {
-      name: 'Weapon Training(Heavy)',
-      cost: 0,
-      description: `The character can use all weapons with Class: Pistol, Basic, Melee, Throwing, and Vehicle within the group she has selected with this Talent. When a character attempts to use a weapon she does not have the correct Weapon Training Talent for, she suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test. The character can only use weapons with Class: Heavy without suffering the -20 penalty if she has both Weapon Training in the appropriate group and Weapon Training (Heavy).
-      This Talent may be taken more than once, each time with a different specialization.`,
-      isPerk: false,
-    },
   ];
 
   starterKit = `
@@ -608,11 +589,25 @@ Imperial infantrymans' uplifting primer
 class Robot {
   name = undefined;
 
-  health = 'uninjured';
+  health = 'injured';
 
-  gun = {
-    description: 'Heavy, 100m, -/-/10, 1d10+3 E, Pen 1, Clip 50/90, Reload 2 Full, Lance, Felling (2)',
-  };
+  gun = [
+    {
+      owner: `Legs`,
+      name: `Roko's Mining Beam`,
+      description: 'Heavy, 100m, -/-/10, 1d10+3 E, Pen 1, Clip 50/90, Reload 2 Full, Lance, Felling (2)',
+    },
+    {
+      owner: `Rogue`,
+      name: `M41 Multi-Laser`,
+      description: `Heavy, 150m, -/-/5, 2d10+10 E, pen 2, Clip 100, Reload 2 Full, Reliable`,
+    },
+    {
+      owner: `Squigsort`,
+      name: `Flames of the Blessed Squigsortium`,
+      description: `Basic, 20m, S/-/-, 1d10+4 E, pen 2, clip 6, Reload 2 Full, Flame, Spray`,
+    },
+  ];
 
   directives = [
     {
