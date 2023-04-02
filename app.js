@@ -18,8 +18,8 @@ class Roko {
   fate = 3 / 3;
   XP = {
     base: 2800,
-    advanced: 3375,
-    unspent: 525,
+    advanced: 3800,
+    unspent: 250,
     total: base + advanced + unspent,
   };
 
@@ -315,7 +315,22 @@ class Roko {
       cost: 200,
       description: `For each Comrade who is  part of any Ranged Volley Order this character issues, this character deals +1 additional Damage (to a maximum of +3 Damage) with any attack he makes with a las weapon for that Round in addition to the normal benefit.`,
       isPerk: true,
-    }
+    },
+    {
+      name: 'Cybernetic Boost',
+      cost: 300,
+      description: `Cybernetics are an important part of life for many members of the Imperial Guard, for soldiers often need to replace lost or crippled limbs and organs of vulnerable flesh and blood with assuredly superior appendages and devices of metal and oil. Though most Guardsmen know better than to tamper with these sacred devices, some enterprising (or foolish) individuals have been known to modify the baseline capacities of these devices, allowing them to get a short burst of power by overloading the device in a semi-controlled fashion.
+      As a Half Action, this character may spend a Fate Point and make a Challenging (+0) Tech-Use Test. If she succeeds, she gains either the Unnatural Agility (X) or Unnatural Strength (X) Trait, where X is equal to one, plus one for every two additional Degrees of Success she scores on the Test (or increases existing versions of those Traits by X). These Traits persist for a number of Rounds equal to her Intelligence Bonus. The character may end the effect at any time. At the end of each Round in which the character allows it to persist, she gains 1 level of Fatigue.`,
+      isPerk: true,
+    },
+    {
+      name: 'Cybernetic Calibrations',
+      cost: 400,
+      description: `This character, either through initiation into the mysteries of the Omnissiah or tinkering that would certainly attract negative attention from such individuals, has fine-tuned her cybernetic implants to a point of optimization.
+      All of this character's Cybernetics count as being one level of Craftsmanship higher than their base Craftsmanship (so, for instance, a Poor Craftsmanship bionic arm would become Common Craftsmanship, or a Good Craftsmanship limb would become Best Craftsmanship).
+      `,
+      isPerk: true,
+    },
   ];
 
   traits = [
@@ -446,6 +461,10 @@ class Roko {
       description: 'Molotov',
     },
     {
+      name: `Demo Charges`,
+      quantity: 4,
+    },
+    {
       name: 'Triplex pattern lasgun',
       weight: 4.5,
       quality: 'Normal',
@@ -482,7 +501,7 @@ class Roko {
     {
       name: 'Utility Mechadendrite',
       quality: 'Normal',
-      description: `This two-metre long limb houses a variety of tools and attachments designed to assist a Tech-Priest in the course of her holy duties. The mechadendrite counts as a combi-tool, granting a +10 bonus to all Tech-Use Tests. The limb also houses six injector pistons, each of which may be filled with one dose of sacred unguent. These can be supplied separately. In addition to this, the limb contains an electrically powered censer, which can gust incense fumes over particularly troublesome faults. The censer generates one “blast” of smoke every fifteen minutes. This can be employed in melee combat to distract and choke, imposing a -5 penalty to Weapon Skill Tests made by all living creatures within a two-metre radius for one Round. This is a Half Action. Unless the censer is deactivated, all Perception Tests made to detect the Tech- Priest that rely on a sense of smell gain a +10 bonus. Finally, the mechadendrite contains a cutting blade. This counts as a knife with the Defensive Quality and Mono upgrade. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
+      description: `This two-metre long limb houses a variety of tools and attachments designed to assist a Tech-Priest in the course of her holy duties. The mechadendrite counts as a combi-tool, granting a +10 bonus to all Tech-Use Tests. The limb also houses six injector pistons, each of which may be filled with one dose of sacred unguent. These can be supplied separately. In addition to this, the limb contains an electrically powered censer, which can gust incense fumes over particularly troublesome faults. The censer generates one “blast” of smoke every fifteen minutes. This can be employed in melee combat to distract and choke, imposing a -5 penalty to Weapon Skill Tests made by all living creatures within a two-metre radius for one Round. This is a Half Action. Unless the censer is deactivated, all Perception Tests made to detect the Tech-Priest that rely on a sense of smell gain a +10 bonus. Finally, the mechadendrite contains a cutting blade. This counts as a knife with the Defensive Quality and Mono upgrade. A character must have the appropriate Mechadendrite Use Talent to operate this implant.`,
       special: [
         `Knife: melee/thrown, 5m, 1d5 R, 0 pen`,
         `Defensive: A Defensive weapon, such as a shield, is intended to be used to block attacks and is awkward when used to make attacks. Defensive weapons grant a +15 bonus to Tests made when used to Parry, but impose a -10 penalty when used to make attacks.`,
@@ -520,21 +539,6 @@ class Roko {
   ];
 
   wishlistPerks = [
-    {
-      name: 'Cybernetic Boost',
-      cost: 300,
-      description: `Cybernetics are an important part of life for many members of the Imperial Guard, for soldiers often need to replace lost or crippled limbs and organs of vulnerable flesh and blood with assuredly superior appendages and devices of metal and oil. Though most Guardsmen know better than to tamper with these sacred devices, some enterprising (or foolish) individuals have been known to modify the baseline capacities of these devices, allowing them to get a short burst of power by overloading the device in a semi-controlled fashion.
-      As a Half Action, this character may spend a Fate Point and make a Challenging (+0) Tech-Use Test. If she succeeds, she gains either the Unnatural Agility (X) or Unnatural Strength (X) Trait, where X is equal to one, plus one for every two additional Degrees of Success she scores on the Test (or increases existing versions of those Traits by X). These Traits persist for a number of Rounds equal to her Intelligence Bonus. The character may end the effect at any time. At the end of each Round in which the character allows it to persist, she gains 1 level of Fatigue.`,
-      isPerk: true,
-    },
-    {
-      name: 'Cybernetic Calibrations',
-      cost: 400,
-      description: `This character, either through initiation into the mysteries of the Omnissiah or tinkering that would certainly attract negative attention from such individuals, has fine-tuned her cybernetic implants to a point of optimization.
-      All of this character's Cybernetics count as being one level of Craftsmanship higher than their base Craftsmanship (so, for instance, a Poor Craftsmanship bionic arm would become Common Craftsmanship, or a Good Craftsmanship limb would become Best Craftsmanship).
-      `,
-      isPerk: true,
-    },
     {
       name: 'Coordination Algorithms',
       cost: 300,
