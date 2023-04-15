@@ -19,7 +19,7 @@ class Roko {
   XP = {
     base: 2800,
     advanced: 3800,
-    unspent: 250,
+    unspent: 350,
     total: base + advanced + unspent,
   };
 
@@ -317,19 +317,16 @@ class Roko {
       isPerk: true,
     },
     {
-      name: 'Cybernetic Boost',
+      name: 'Coordination Algorithms',
       cost: 300,
-      description: `Cybernetics are an important part of life for many members of the Imperial Guard, for soldiers often need to replace lost or crippled limbs and organs of vulnerable flesh and blood with assuredly superior appendages and devices of metal and oil. Though most Guardsmen know better than to tamper with these sacred devices, some enterprising (or foolish) individuals have been known to modify the baseline capacities of these devices, allowing them to get a short burst of power by overloading the device in a semi-controlled fashion.
-      As a Half Action, this character may spend a Fate Point and make a Challenging (+0) Tech-Use Test. If she succeeds, she gains either the Unnatural Agility (X) or Unnatural Strength (X) Trait, where X is equal to one, plus one for every two additional Degrees of Success she scores on the Test (or increases existing versions of those Traits by X). These Traits persist for a number of Rounds equal to her Intelligence Bonus. The character may end the effect at any time. At the end of each Round in which the character allows it to persist, she gains 1 level of Fatigue.`,
-      isPerk: true,
+      description: `The Enginseer Prime optimises her Servitors to assist her in tandem, each mechanical minion acting a cog with a greater machine. When two or more Servitors assist her on a Tech-Use Test via the Servo-Arm Comrade Advance, she gains an additional +5 bonus for each Servitor that assists beyond the first.`,
+      isPerk: false,
     },
     {
-      name: 'Cybernetic Calibrations',
-      cost: 400,
-      description: `This character, either through initiation into the mysteries of the Omnissiah or tinkering that would certainly attract negative attention from such individuals, has fine-tuned her cybernetic implants to a point of optimization.
-      All of this character's Cybernetics count as being one level of Craftsmanship higher than their base Craftsmanship (so, for instance, a Poor Craftsmanship bionic arm would become Common Craftsmanship, or a Good Craftsmanship limb would become Best Craftsmanship).
-      `,
-      isPerk: true,
+      name: `Attend the Machine Spirit`,
+      cost: 300,
+      description: `A Character can use this Order when she attempts to activate or operate a piece of technology that requires a Tech-Use Test. The character's Comrade assists her with the Test granting the character a +10 bonus. The character's Comrade must be in Cohesion to enact this Order. This Order is useable with a Servitor Comrade.`,
+      isPerk: false,
     },
   ];
 
@@ -540,12 +537,6 @@ class Roko {
 
   wishlistPerks = [
     {
-      name: 'Coordination Algorithms',
-      cost: 300,
-      description: `The Enginseer Prime optimises her Servitors to assist her in tandem, each mechanical minion acting a cog with a greater machine. When two or more Servitors assist her on a Tech-Use Test via the Servo-Arm Comrade Advance, she gains an additional +5 bonus for each Servitor that assists beyond the first.`,
-      isPerk: false,
-    },
-    {
       name: 'Master Engineseer',
       cost: 400,
       description: '+10 to Tech-use, and spend a Fate to auto succeed a Tech-use',
@@ -567,6 +558,21 @@ class Roko {
       name: 'Iron Jaw',
       cost: 200,
       description: `The character has taken blows from Orks and given back as good as they got. The character can bounce back from most strikes without ill effects. If ever Stunned, a successful Toughness Test allows the character to ignore the effects.`,
+      isPerk: true,
+    },
+    {
+      name: 'Cybernetic Boost',
+      cost: 300,
+      description: `Cybernetics are an important part of life for many members of the Imperial Guard, for soldiers often need to replace lost or crippled limbs and organs of vulnerable flesh and blood with assuredly superior appendages and devices of metal and oil. Though most Guardsmen know better than to tamper with these sacred devices, some enterprising (or foolish) individuals have been known to modify the baseline capacities of these devices, allowing them to get a short burst of power by overloading the device in a semi-controlled fashion.
+      As a Half Action, this character may spend a Fate Point and make a Challenging (+0) Tech-Use Test. If she succeeds, she gains either the Unnatural Agility (X) or Unnatural Strength (X) Trait, where X is equal to one, plus one for every two additional Degrees of Success she scores on the Test (or increases existing versions of those Traits by X). These Traits persist for a number of Rounds equal to her Intelligence Bonus. The character may end the effect at any time. At the end of each Round in which the character allows it to persist, she gains 1 level of Fatigue.`,
+      isPerk: true,
+    },
+    {
+      name: 'Cybernetic Calibrations',
+      cost: 400,
+      description: `This character, either through initiation into the mysteries of the Omnissiah or tinkering that would certainly attract negative attention from such individuals, has fine-tuned her cybernetic implants to a point of optimization.
+      All of this character's Cybernetics count as being one level of Craftsmanship higher than their base Craftsmanship (so, for instance, a Poor Craftsmanship bionic arm would become Common Craftsmanship, or a Good Craftsmanship limb would become Best Craftsmanship).
+      `,
       isPerk: true,
     },
   ];
