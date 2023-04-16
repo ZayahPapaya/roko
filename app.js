@@ -17,10 +17,8 @@ class Roko {
   carry = 6 / 45
   fate = 3 / 3;
   XP = {
-    base: 2800,
-    advanced: 3800,
-    unspent: 350,
-    total: base + advanced + unspent,
+    unspent: 1050,// 1800 remaining budget. 1200 for Redundant Systems * 4 to reach Servitor cap, 100 for Logic and 500 for Lore (Admech) +20 while I still have knowledge. Change to Magna for next specialization for shooty and driving.
+    total: 7050,
   };
 
   aptitudes = [
@@ -135,9 +133,14 @@ class Roko {
 
   skills = [
     {
-      name: 'Common Lore (Adeptus Mechanicus, Tech)',
+      name: 'Common Lore (Adeptus Mechanicus)',
       tier: 1,
       description: 'string',
+    },
+    {
+      name: `Tech`,
+      tier: 1,
+      description: `string`,
     },
     {
       name: 'Forbidden Lore (Adeptus Mechanicus)',
@@ -167,14 +170,8 @@ class Roko {
       description: 'N/A',
       cost: 100,
     },
-    // {
-    //   name: 'Parry',
-    //   tier: 1,
-    //   description: 'N/A',
-    //   cost: 100,
-    // },
     {
-      name: 'Forbidden Lore(Xenotech)',
+      name: 'Forbidden Lore(Xeno)',
       tier: 1,
       cost: 100,
       description: 'string',
@@ -431,7 +428,7 @@ class Roko {
     {
       name: 'Auxilary grenade launcher weapon',
       quality: 'Normal',
-      description: 'Loaded with Krak grenade',
+      description: 'Loaded with Frag grenade',
     },
     {
       name: 'Frag grenade',
