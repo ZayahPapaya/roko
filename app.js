@@ -17,8 +17,8 @@ class Roko {
   carry = 6 / 45
   fate = 3 / 3;
   XP = {
-    unspent: 1050,// 1800 remaining budget. 1200 for Redundant Systems * 4 to reach Servitor cap, 100 for Logic and 500 for Lore (Admech) +20 while I still have knowledge. Change to Magna for next specialization for shooty and driving.
-    total: 7050,
+    unspent: 0,// 300 remaining budget. 300 for Lore (Admech) +20 while I still have knowledge. Change to Magna for next specialization for shooty and driving.
+    total: 7500,
   };
 
   aptitudes = [
@@ -134,53 +134,59 @@ class Roko {
   skills = [
     {
       name: 'Common Lore (Adeptus Mechanicus)',
-      tier: 1,
-      description: 'string',
+      tier: 2,
+      description: '+10',
     },
     {
       name: `Tech`,
       tier: 1,
-      description: `string`,
+      description: `+0`,
     },
     {
       name: 'Forbidden Lore (Adeptus Mechanicus)',
       tier: 1,
-      description: 'string',
+      description: '+0',
     },
     {
       name: 'Forbidden Lore (Archaeotech)',
       tier: 1,
-      description: 'string',
+      description: '+0',
     },
     {
       name: 'Tech-Use',
       tier: 3, // two tech-use perks
-      description: 'string',
+      description: '+20',
       cost: 300,
     },
     {
       name: 'Trade (Armorer)',
       tier: 1,
-      description: 'N/A',
+      description: '+0',
       cost: 100,
     },
     {
       name: 'Commerce',
       tier: 1,
-      description: 'N/A',
+      description: '+0',
       cost: 100,
     },
     {
       name: 'Forbidden Lore(Xeno)',
       tier: 1,
       cost: 100,
-      description: 'string',
+      description: '+0',
     },
     {
       name: 'Security',
       tier: 1,
       cost: 100,
-      description: 'string',
+      description: '+0',
+    },
+    {
+      name: 'Logic',
+      tier: 1,
+      cost: 100,
+      description: '+0',
     },
   ];
 
@@ -295,7 +301,7 @@ class Roko {
     },
     {
       name: 'Redundant Systems',
-      quantity: '2',
+      quantity: '6',
       cost: 300,
       description: `The Enginseer Prime gains an extra Servitor. She can select this Advance up to a number of times equal to her Intelligence Bonus.`,
       isPerk: false,
@@ -521,6 +527,11 @@ class Roko {
       name: `Ocular Sight`,
       quality: `Normal`,
       description: `An ocular sight is an implant that grants the same benefits as a cybernetic eye. Until it is activated, this is the only benefit it provides. A character with an ocular sight can activate (or deactivate) its combat mode as a Half Action. When she does, she gains the Unnatural Ballistic Skill (1) Trait but suffers a -20 penalty to Awareness Tests while it is active as her vision tunnels in to focus on her targets. Further, while it is active, she cannot benefit from any sight attached to her gun.`,
+    },
+    {
+      name: `Tau Communicator`,
+      quality: `Tau`,
+      description: `A Tau communication device gifted by a Pathfinder unit encountered behind Orkish lines.`,
     },
   ];
 
