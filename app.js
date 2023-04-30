@@ -17,8 +17,8 @@ class Roko {
   carry = 6 / 45
   fate = 3 / 3;
   XP = {
-    unspent: 0,// 300 remaining budget. 300 for Lore (Admech) +20 while I still have knowledge. Change to Magna for next specialization for shooty and driving.
-    total: 7500,
+    unspent: 50,// 300 remaining budget. 300 for Lore (Admech) +20 while I still have knowledge. Change to Magna for next specialization for shooty and driving.
+    total: 7550,
   };
 
   aptitudes = [
@@ -532,6 +532,11 @@ class Roko {
       name: `Tau Communicator`,
       quality: `Tau`,
       description: `A Tau communication device gifted by a Pathfinder unit encountered behind Orkish lines.`,
+    },
+    {
+      name: `Tau Machine Spirit Core`,
+      quality: `Tau`,
+      description: `A core pulled from the Devil Dog. Traded to a Rogue Trader, and later acquired by the regiment. Similar cores can be removed, but different sizes might require Tau assistance again.`,
     },
   ];
 
