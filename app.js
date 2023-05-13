@@ -440,25 +440,25 @@ class Roko {
       name: 'Frag grenade',
       weight: 0.5,
       quantity: 1,
-      description: 'anti-infantry',
+      description: 'SBx3, S/-/-, 2d10 X, pen 0, clip 1, Blast (3), Ogryn-Proof',
     },
     {
       name: 'Krak grenade',
       weight: 0.5,
       quantity: 1,
-      description: 'anti-tank',
+      description: 'SBx3, S/-/-, 2d10+4 X, pen 6, clip 1, Concussive (0)',
     },
     {
       name: 'Smoke grenade',
       weight: 0.5,
       quantity: 1,
-      description: 'Smoke',
+      description: 'SBx3, S/-/-, -, pen 0, clip 1, Smoke (6)',
     },
     {
       name: 'Fire grenade',
       weight: 0.5,
       quantity: 2,
-      description: 'Molotov',
+      description: 'SBx3, S/-/-, 1d10+3 E, pen 6, clip 1, Blast (3), Flame',
     },
     {
       name: `Demo Charges`,
@@ -468,13 +468,17 @@ class Roko {
       name: 'Triplex pattern lasgun',
       weight: 4.5,
       quality: 'Normal',
-      description: 'boom',
+      description:`
+      Standard Mode: Basic, 100m, S/3/-, 1d10+3 E, pen 0, clip 30, reload Full
+      Precision Mode: Basic, 150m, S/-/-, 1d10+3 E, pen 0, clip 30, reload Full, Accurate
+      Burst Mode: Basic, 50m, S/-/-, 1d10+3 E, pen 0, clip 30, reload Full, Proven (5), Felling (4)
+      `,
     },
     {
       name: 'Las pistol',
       weight: 1.5,
       quality: 'Normal',
-      description: 'boom',
+      description: 'Pistol, 30m, S/2/-, 1d10+2 E, pen 0, clip 30, reload Half, Reliable',
     },
     {
       name: 'Basic charge pack',
@@ -536,7 +540,7 @@ class Roko {
     {
       name: `Tau Machine Spirit Core`,
       quality: `Tau`,
-      description: `A core pulled from the Devil Dog. Traded to a Rogue Trader, and later acquired by the regiment. Similar cores can be removed, but different sizes might require Tau assistance again.`,
+      description: `A core pulled from the Devil Dog. Traded to a Rogue Trader, and later acquired by the regiment. Similar cores can be removed, but different sizes might require Tau assistance again. Currently integrated into Dr. Squigsort.`,
     },
   ];
 
@@ -610,26 +614,59 @@ Imperial infantrymans' uplifting primer
 };
 
 class Robot {
-  name = undefined;
 
-  health = 'injured';
-
-  gun = [
+  servitors = [
     {
-      owner: `Legs`,
-      name: `Roko's Mining Beam`,
+      name: `Legs`,
+      health: 'injured',
+      gun: `Roko's Mining Beam`,
       description: 'Heavy, 100m, -/-/10, 1d10+3 E, Pen 1, Clip 50/90, Reload 2 Full, Lance, Felling (2)',
     },
     {
-      owner: `Rogue`,
-      name: `M41 Multi-Laser`,
+      name: `Squigsort`,
+      health: 'injured',
+      gun: undefined,
+      description: `
+      Praetorian Chassis
+      Task Servitor + Tau Machine Spirit
+      Provides additional +20 to Tech-Use
+      `,
+    },
+    {
+      name: `Skitarii Alpha`,
+      health: 'injured',
+      gun: `Lathe-Lasrifle`,
+      description: `Basic, 100m, S/2/-, 1d10+6 E, pen 2, clip N/A, Reload N/A, Tearing`,
+    },
+    {
+      name: `Skitarii Retributor`,
+      health: 'injured',
+      gun: `M41 Multi-Laser`,
       description: `Heavy, 150m, -/-/5, 2d10+10 E, pen 2, Clip 100, Reload 2 Full, Reliable`,
     },
     {
-      owner: `Squigsort`,
-      name: `Flames of the Blessed Squigsortium`,
-      description: `Basic, 20m, S/-/-, 1d10+4 E, pen 2, clip 6, Reload 2 Full, Flame, Spray`,
+      name: `Skitarii Retributor`,
+      health: 'injured',
+      gun: `M41 Multi-Laser`,
+      description: `Heavy, 150m, -/-/5, 2d10+10 E, pen 2, Clip 100, Reload 2 Full, Reliable`,
     },
+    {
+      name: `Skitarii Retributor`,
+      health: 'injured',
+      gun: `M41 Multi-Laser`,
+      description: `Heavy, 150m, -/-/5, 2d10+10 E, pen 2, Clip 100, Reload 2 Full, Reliable`,
+    },
+    {
+      name: `Skitarii Retributor`,
+      health: 'injured',
+      gun: `Man Portable Lascannon`,
+      description: `Heavy, 300m, S/-/-, 5d10+10 E, pen 10, clip 5, Reload 2 Full, Proven (3)`,
+    },
+    // {
+    //   name: `Rogue`,
+    //   gun: `M41 Multi-Laser`,
+    //   description: `Heavy, 150m, -/-/5, 2d10+10 E, pen 2, Clip 100, Reload 2 Full, Reliable`,
+    // },
   ];
 
   directives = [
@@ -647,6 +684,11 @@ class Robot {
       name: 'Precision Firepower Delivery',
       type: 'Attack Order (Full Action)',
       effect: `This order may only be issued to servitor comrades outfitted with a weapon capable of firing single shots. As part of this order, the character's comrade makes a standard ranged attack action against a target within range with its integrated heavy weapon, which is used for  the attack. The servitor must be within communication range to enact this order.`,
+    },
+    {
+      name: `Attend the Machine Spirit`,
+      type: 'Order (Half Action)',
+      description: `A Character can use this Order when she attempts to activate or operate a piece of technology that requires a Tech-Use Test. The character's Comrade assists her with the Test granting the character a +10 bonus. The character's Comrade must be in Cohesion to enact this Order. This Order is useable with a Servitor Comrade.`,
     },
   ] // want Praetorian Servitor Chassis
 };
