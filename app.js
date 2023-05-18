@@ -15,10 +15,10 @@ class Roko {
   armor = 5 + 5 + 6 + 1 + 2 // 19, 17 on head
   implants = 11; // implants benefit to 10
   carry = 6 / 45
-  fate = 3 / 3;
+  fate = 0 / 3;
   XP = {
-    unspent: 50,// 300 remaining budget. 300 for Lore (Admech) +20 while I still have knowledge. Change to Magna for next specialization for shooty and driving.
-    total: 7550,
+    unspent: 750,// 300 remaining budget. 300 for Lore (Admech) +20 while I still have knowledge. Change to Magna for next specialization for shooty and driving.
+    total: 8250,
   };
 
   aptitudes = [
@@ -88,7 +88,7 @@ class Roko {
       purchased: 0,
     },
     intelligence: {
-      mod: Math.floor(total / 10),
+      mod: Math.floor(total / 10), // 60
       total: base + bonuses + purchased,
       base: 35,
       bonuses: 10,
@@ -187,6 +187,30 @@ class Roko {
       tier: 1,
       cost: 100,
       description: '+0',
+    },
+    {
+      name: `Awareness`,
+      tier: 1,
+      cost: undefined,
+      description: `+0`,
+    },
+    {
+      name: `Navigate (Surface)`,
+      tier: 1,
+      cost: undefined,
+      description: `+0`,
+    },
+    {
+      name: `Survival`,
+      tier: 1,
+      cast: undefined,
+      description: `+0`,
+    },
+    {
+      name: `Linguistics (Gothic)`,
+      tier: 1,
+      cost: undefined,
+      description: `+0`,
     },
   ];
 
@@ -385,7 +409,7 @@ class Roko {
     },
     {
       name: 'Augur Array',
-      quality: 'Normal',
+      quality: 'Good',
       description: `These implanted devices duplicate the effects of sensor systems that go beyond normal human senses. In all cases, their use requires concentration and a Half Action.
       Common systems function identically to a standard handheld auspex device.
       Poor systems possess only a single detection ability (either heat, radiation, electromagnetics, or very rarely Daemonic taint) and have the limited range of 20 metres. If the augur is set to detect Daemonic taint, it has the possibility to be overwhelmed and malfunction should a Daemon get too close.
@@ -429,7 +453,11 @@ class Roko {
     {
       name: 'Lathe Laspistol',
       quality: 'Normal',
-      description: 'Pistol, 40m range, S/2/- 1d10+6 E, 2 pen, N/A clip, N/A reload, tearing',
+      description: `
+      Pistol, 40m range, S/2/- 1d10+6 E, 2 pen, N/A clip, N/A reload, tearing
+      Sacred Inscription: +10 against Pinning
+      Custom Grip +5 to BS
+      `,
     },
     {
       name: 'Auxilary grenade launcher weapon',
@@ -439,13 +467,13 @@ class Roko {
     {
       name: 'Frag grenade',
       weight: 0.5,
-      quantity: 1,
+      quantity: 0,
       description: 'SBx3, S/-/-, 2d10 X, pen 0, clip 1, Blast (3), Ogryn-Proof',
     },
     {
       name: 'Krak grenade',
       weight: 0.5,
-      quantity: 1,
+      quantity: 0,
       description: 'SBx3, S/-/-, 2d10+4 X, pen 6, clip 1, Concussive (0)',
     },
     {
@@ -468,18 +496,18 @@ class Roko {
       name: 'Triplex pattern lasgun',
       weight: 4.5,
       quality: 'Normal',
-      description:`
+      description: `
       Standard Mode: Basic, 100m, S/3/-, 1d10+3 E, pen 0, clip 30, reload Full
       Precision Mode: Basic, 150m, S/-/-, 1d10+3 E, pen 0, clip 30, reload Full, Accurate
       Burst Mode: Basic, 50m, S/-/-, 1d10+3 E, pen 0, clip 30, reload Full, Proven (5), Felling (4)
       `,
     },
-    {
-      name: 'Las pistol',
-      weight: 1.5,
-      quality: 'Normal',
-      description: 'Pistol, 30m, S/2/-, 1d10+2 E, pen 0, clip 30, reload Half, Reliable',
-    },
+    // {
+    //   name: 'Las pistol',
+    //   weight: 1.5,
+    //   quality: 'Normal',
+    //   description: 'Pistol, 30m, S/2/-, 1d10+2 E, pen 0, clip 30, reload Half, Reliable',
+    // },
     {
       name: 'Basic charge pack',
       quantity: 4,
@@ -541,6 +569,11 @@ class Roko {
       name: `Tau Machine Spirit Core`,
       quality: `Tau`,
       description: `A core pulled from the Devil Dog. Traded to a Rogue Trader, and later acquired by the regiment. Similar cores can be removed, but different sizes might require Tau assistance again. Currently integrated into Dr. Squigsort.`,
+    },
+    {
+      name: `Cuckoo Clock`,
+      quality: `Fancy AF`,
+      description: `Complete with cogitators, fine clockwork, and intricate flight mechanisms.`,
     },
   ];
 
@@ -611,6 +644,25 @@ Imperial infantrymans' uplifting primer
 2 weeks Combat sustenance rations
 1 Fluff item
   `
+
+  NPCS = [
+    {
+      name: `Por'el Vash'ya Giroth`,
+      description: `Tau Water-caste Diplomat that Roko knows`,
+    },
+    {
+      name: `Marshall Gerard Montebank`,
+      description: `The current Marshall replacing Taddeus for now. Mild upset.`,
+    },
+    {
+      name: `Datasmith Hecate`,
+      description: `The beloved machine spirit operating tech-priest. Currently has Rogue.`,
+    },
+    {
+      name: `Inquisitor Hale`,
+      description: `Hail!`,
+    },
+  ]
 };
 
 class Robot {
@@ -620,14 +672,32 @@ class Robot {
       name: `Legs`,
       health: 'injured',
       gun: `Roko's Mining Beam`,
-      description: 'Heavy, 100m, -/-/10, 1d10+3 E, Pen 1, Clip 50/90, Reload 2 Full, Lance, Felling (2)',
+      augments: [
+        {
+          name: `Targeter`,
+          effect: `A targeter reduces all penalties on Ballistic Skill Tests by ten.`,
+        },
+        {
+          name: `Custom Grip`,
+          effect: `+5 to BS`,
+        },
+      ],
+      description: `
+      Heavy, 100m, -/-/10, 1d10+3 E, Pen 1, Clip 50/90, Reload 2 Full, Lance, Felling (2)
+      Upgraded Vox Synth
+      Praetorian Chassis - +1 wound state, 55 BS
+      `,
     },
     {
       name: `Squigsort`,
       health: 'injured',
       gun: undefined,
+      augments: [
+        undefined,
+      ],
       description: `
-      Praetorian Chassis
+      Vox Synth
+      Praetorian Chassis - +1 wound state, +15 per ranged volley
       Task Servitor + Tau Machine Spirit
       Provides additional +20 to Tech-Use
       `,
@@ -636,30 +706,69 @@ class Robot {
       name: `Skitarii Alpha`,
       health: 'injured',
       gun: `Lathe-Lasrifle`,
+      augments: [
+        undefined,
+      ],
       description: `Basic, 100m, S/2/-, 1d10+6 E, pen 2, clip N/A, Reload N/A, Tearing`,
     },
     {
-      name: `Skitarii Retributor`,
+      name: `Skitarii Retributor #1`,
       health: 'injured',
       gun: `M41 Multi-Laser`,
+      augments: [
+        {
+          name: `Targeter`,
+          effect: `A targeter reduces all penalties on Ballistic Skill Tests by ten.`,
+        },
+        {
+          name: `Custom Grip`,
+          effect: `+5 to BS`,
+        },
+      ],
       description: `Heavy, 150m, -/-/5, 2d10+10 E, pen 2, Clip 100, Reload 2 Full, Reliable`,
     },
     {
-      name: `Skitarii Retributor`,
+      name: `Skitarii Retributor #2`,
       health: 'injured',
       gun: `M41 Multi-Laser`,
+      augments: [
+        {
+          name: `Targeter`,
+          effect: `A targeter reduces all penalties on Ballistic Skill Tests by ten.`,
+        },
+        {
+          name: `Custom Grip`,
+          effect: `+5 to BS`,
+        },
+      ],
       description: `Heavy, 150m, -/-/5, 2d10+10 E, pen 2, Clip 100, Reload 2 Full, Reliable`,
     },
     {
-      name: `Skitarii Retributor`,
+      name: `Skitarii Retributor #3`,
       health: 'injured',
       gun: `M41 Multi-Laser`,
+      augments: [
+        {
+          name: `Targeter`,
+          effect: `A targeter reduces all penalties on Ballistic Skill Tests by ten.`,
+        },
+        {
+          name: `Custom Grip`,
+          effect: `+5 to BS`,
+        },
+      ],
       description: `Heavy, 150m, -/-/5, 2d10+10 E, pen 2, Clip 100, Reload 2 Full, Reliable`,
     },
     {
-      name: `Skitarii Retributor`,
+      name: `Skitarii Retributor Omega`,
       health: 'injured',
       gun: `Man Portable Lascannon`,
+      augments: [
+        {
+          name: `Custom Grip`,
+          effect: `+5 to BS`,
+        },
+      ],
       description: `Heavy, 300m, S/-/-, 5d10+10 E, pen 10, clip 5, Reload 2 Full, Proven (3)`,
     },
     // {
