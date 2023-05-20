@@ -13,7 +13,7 @@ class Guard {
   Run: 24m
   `;
   armor = 6 + 1 + 4; // 11
-  carry = 30/36; // 38 is GL, Plasma, and grenades, 30 for the rest
+  carry = 36/36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
   fate = 4/4;
   XP = 8550;
 
@@ -490,7 +490,7 @@ class Guard {
     },
     {
       name: `Demolitions Charge`,
-      quantity: 3,
+      quantity: 2,
       quality: `Common`,
       description: `
       3d10 + 2 per kg
@@ -560,11 +560,11 @@ class Guard {
       weight: 18,
     },
     {
-      name: `Rotary Grenade Launcher`,
+      name: `M79 Grenade Launcher`,
       quantity: 1,
       quality: `Common`,
-      description: `Basic, 60m, S/-/-, clip 6, reload 2 full`,
-      weight: 12,
+      description: `Basic, 80m, S/-/-, clip 1, reload 1 full`,
+      weight: 5,
     },
     {
       name: `Pawb Gun`,
@@ -575,7 +575,7 @@ class Guard {
       Auxiliary Shotgun: Basic, 30m, S/-/0, 1d10+4 I, pen 0, clip 1, reload 2 full, Scatter
       (Scatter: Point Black Range gets +10 to hit and +3 damage. Short Range gets +10 to hit. Longer ranges -3 to Damage.)
       `,
-      weight: 5,
+      weight: 6,
     },
     {
       name: `Frag Grenade`,
@@ -604,13 +604,6 @@ class Guard {
       quality: `Common`,
       description: `Any character attempting to cross deployed concertina wire must make (-20) Acrobatics or suffer 1d5 rending + 1 for each DoF.`,
       weight: 0.5 * quantity,
-    },
-    {
-      name: `Medi-kit`,
-      quantity: 1,
-      quality: `Common`,
-      description: `+20 to Medicae`,
-      weight: 2,
     },
     {
       name: `Multikey`,
