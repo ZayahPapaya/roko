@@ -452,66 +452,7 @@ class Guard {
 
   traits = [];
 
-  gear = [
-    {
-      name: undefined,
-      quantity: 1,
-      quality: undefined,
-      description: undefined,
-      weight: undefined,
-    },
-    {
-      name: `Magnoculars`,
-      quantity: 1,
-      quality: `Common`,
-      description: `See far away`,
-      weight: 0.5,
-    },
-    {
-      name: `Motorcycle`,
-      quantity: 1,
-      quality: `Kickass`,
-      description: `It's my motorcycle`,
-      weight: undefined,
-    },
-    {
-      name: `Cyclops Demolitions Vehicle`,
-      quantity: 1,
-      quality: `Common`,
-      description: `Bomb-Squig`,
-      weight: undefined,
-    },
-    {
-      name: `Respirator`,
-      quantity: 1,
-      quality: `Common`,
-      description: `+30 to Toughness against gas and reroll failed results.`,
-      weight: null,
-    },
-    {
-      name: `Demolitions Charge`,
-      quantity: 2,
-      quality: `Common`,
-      description: `
-      3d10 + 2 per kg
-      blast(x = kg)
-      `,
-      weight: 1 * quantity,
-    },
-    {
-      name: `Combi-Tool`,
-      quantity: 1,
-      quality: `Common`,
-      description: `+10 to Tech-Use`,
-      weight: 1,
-    },
-    {
-      name: `Recoil Gloves`,
-      quantity: 1,
-      quality: `Common`,
-      description: `Can fire basic weapons or two-handed pistols with one hand without the -20 penalty.`,
-      weight: null,
-    },
+  gunReferences = [
     {
       name: `Concertina-Pattern Hand Cannon`,
       quantity: 1,
@@ -522,6 +463,49 @@ class Guard {
       Red Dot Sight: +10 to BS when firing single shot
       `,
       weight: 3,
+    },
+    {
+      name: `Plasma Gun`,
+      quantity: 1,
+      quality: `Common`,
+      description: `Basic, 90m, S/2/-, 1d10+7 E, pen 6, clip 40, reload 5 full, Maximal, Overheats`,
+      weight: 18,
+    },
+    {
+      name: `Pawb Gun`,
+      quantity: 1,
+      quality: `Common`,
+      description: `
+      Basic, 100m, S/4/0, 1d10+4 I, pen 2, clip 4, reload 2 full, Reliable
+      Auxiliary Shotgun: Basic, 30m, S/-/0, 1d10+4 I, pen 0, clip 1, reload 2 full, Scatter
+      (Scatter: Point Black Range gets +10 to hit and +3 damage. Short Range gets +10 to hit. Longer ranges -3 to Damage.)
+      `,
+      weight: 6,
+    },
+  ];
+
+  gear = [
+    {
+      name: undefined,
+      quantity: 1,
+      quality: undefined,
+      description: undefined,
+      weight: undefined,
+    },
+    // // // Tools // // //
+    {
+      name: `Combi-Tool`,
+      quantity: 1,
+      quality: `Common`,
+      description: `+10 to Tech-Use`,
+      weight: 1,
+    },
+    {
+      name: `Magnoculars`,
+      quantity: 1,
+      quality: `Common`,
+      description: `See far away`,
+      weight: 0.5,
     },
     {
       name: `Mind Impulse Unit (MIU)`,
@@ -553,6 +537,33 @@ class Guard {
       weight: 4,
     },
     {
+      name: `Concertina Wire`,
+      quantity: 2,
+      quality: `Common`,
+      description: `Any character attempting to cross deployed concertina wire must make (-20) Acrobatics or suffer 1d5 rending + 1 for each DoF.`,
+      weight: 0.5 * quantity,
+    },
+    {
+      name: `Multikey`,
+      quantity: 1,
+      quality: `Common`,
+      description: `+30 to Security against locks`,
+      weight: null,
+    },
+    // // // Guns // // //
+    {
+      name: `Concertina-Pattern Hand Cannon`,
+      quantity: 1,
+      quality: `Common`,
+      description: `
+      -10 to BS unless two-handed or wearing Recoil Gloves
+      Pistol, 45m, S/-/-, 1d10+4 I, pen 2, clip 5, reload 2 full, Crippling (2), Accurate 3kg
+      Red Dot Sight: +10 to BS when firing single shot
+      Concertina Pattern: Long Barrel, Lethal
+      `,
+      weight: 3,
+    },
+    {
       name: `Plasma Gun`,
       quantity: 1,
       quality: `Common`,
@@ -577,6 +588,7 @@ class Guard {
       `,
       weight: 6,
     },
+    // // // Bombs // // //
     {
       name: `Frag Grenade`,
       quantity: 6,
@@ -590,27 +602,6 @@ class Guard {
       quality: `Common`,
       description: `SBx3, S/-/-, 2d10+4, pen 6, clip 1, Concussive (0)`,
       weight: 0.5 * quantity,
-    },
-    {
-      name: `Red Dot Laser Sight`,
-      quantity: 1,
-      quality: `Common`,
-      description: `+10 to BS when firing single shot`,
-      weight: null,
-    },
-    {
-      name: `Concertina Wire`,
-      quantity: 2,
-      quality: `Common`,
-      description: `Any character attempting to cross deployed concertina wire must make (-20) Acrobatics or suffer 1d5 rending + 1 for each DoF.`,
-      weight: 0.5 * quantity,
-    },
-    {
-      name: `Multikey`,
-      quantity: 1,
-      quality: `Common`,
-      description: `+30 to Security against locks`,
-      weight: null,
     },
     {
       name: `Snare Mine`,
@@ -642,6 +633,17 @@ class Guard {
       description: `SBx3, S/-/-, 1d10+3 E, pen 6, clip 1, Blast (3) Flame`,
       weight: 0.5 * quantity,
     },
+    {
+      name: `Demolitions Charge`,
+      quantity: 2,
+      quality: `Common`,
+      description: `
+      3d10 + 2 per kg
+      blast(x = kg)
+      `,
+      weight: 1 * quantity,
+    },
+    // // // Ammo // // //
     {
       name: `Inferno Shells`,
       quantity: 2,
@@ -678,12 +680,66 @@ class Guard {
       description: `Refills Shotgun (8 per)`,
       weight: null,
     },
+    // // // Armor // // //
     {
       name: `Light Carapace`,
       quantity: 2,
       quality: `Best`,
       description: `AP: 6`,
       weight: 7.5,
+    },
+    {
+      name: `Respirator`,
+      quantity: 1,
+      quality: `Common`,
+      description: `+30 to Toughness against gas and reroll failed results.`,
+      weight: null,
+    },
+    {
+      name: `Recoil Gloves`,
+      quantity: 1,
+      quality: `Common`,
+      description: `Can fire basic weapons or two-handed pistols with one hand without the -20 penalty.`,
+      weight: null,
+    },
+    // // // Other // // //
+    {
+      name: `Motorcycle`,
+      quantity: 1,
+      quality: `Kickass`,
+      description: `It's my motorcycle`,
+      weight: undefined,
+    },
+    {
+      name: `Cyclops Demolitions Vehicle`,
+      quantity: 1,
+      quality: `Common`,
+      description: `Bomb-Squig`,
+      weight: undefined,
+    },
+    {
+      name: `Red Dot Laser Sight`,
+      quantity: 1,
+      quality: `Common`,
+      description: `+10 to BS when firing single shot`,
+      weight: null,
+    },
+  ];
+
+  itemsInStorage = [
+    {
+      name: `Flak Vest`,
+      quantity: 1,
+      quality: `Common`,
+      description: undefined,
+      weight: undefined,
+    },
+    {
+      name: `Las Pistol`,
+      quantity: 1,
+      quality: `Common`,
+      description: undefined,
+      weight: undefined,
     },
   ];
 
