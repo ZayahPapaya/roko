@@ -1,5 +1,5 @@
 class Guard {
-  name = undefined;
+  name = `Nyatasha`;
   regiment = undefined;
 
   maxWounds = 10;
@@ -13,9 +13,9 @@ class Guard {
   Run: 24m
   `;
   armor = 6 + 1 + 4; // 11
-  carry = 36/36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
+  carry = 34/36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
   fate = 4/4;
-  XP = 8550;
+  XP = 8550;// 0 left
 
   aptitudes = [
     {
@@ -560,6 +560,10 @@ class Guard {
       Pistol, 45m, S/-/-, 1d10+4 I, pen 2, clip 5, reload 2 full, Crippling (2), Accurate 3kg
       Red Dot Sight: +10 to BS when firing single shot
       Concertina Pattern: Long Barrel, Lethal
+      Custom Grip: +5 to BS
+      Quick-Release: reload reduced by half action
+      Sacred Inscription: +10 against Pinning
+      Modified Stock: Aim grants additional +2/+4 depending on half / full action
       `,
       weight: 3,
     },
@@ -567,7 +571,10 @@ class Guard {
       name: `Plasma Gun`,
       quantity: 1,
       quality: `Common`,
-      description: `Basic, 90m, S/2/-, 1d10+7 E, pen 6, clip 40, reload 5 full, Maximal, Overheats`,
+      description: `
+      Basic, 90m, S/2/-, 1d10+7 E, pen 6, clip 40, reload 5 full, Maximal, Overheats
+      Quick-Release: reload reduced by half action
+      `,
       weight: 18,
     },
     {
@@ -585,8 +592,12 @@ class Guard {
       Basic, 100m, S/4/0, 1d10+4 I, pen 2, clip 4, reload 2 full, Reliable
       Auxiliary Shotgun: Basic, 30m, S/-/0, 1d10+4 I, pen 0, clip 1, reload 2 full, Scatter
       (Scatter: Point Black Range gets +10 to hit and +3 damage. Short Range gets +10 to hit. Longer ranges -3 to Damage.)
+      Sawn-Off: reduced weight by 25%, +2 damage in short range
+      Quick-Release: reload reduced by half action
+      Custom Grip: +5 to BS
+      Reduced-Weight: Reduced weight by 1kg, melee has 10% chance to break it
       `,
-      weight: 6,
+      weight: 4,
     },
     // // // Bombs // // //
     {
