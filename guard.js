@@ -305,7 +305,7 @@ class Guard {
     {
       name: `Modify Payload`,
       description: `When preparing a grenade, missile, or round that has the Blast or Smoke Quality, this character may make a Challenging (+0) Tech-Use Test using the Demolitions Special Use of the Skill. If she succeeds, the weapon increases Damage (if it deals Damage normally) and its Blast or Smoke Quality by 1, plus 1 for every three additional Degrees of Success beyond the first that she scores on the Test. If she fails by a number of Degrees of Failure greater than her Intelligence Bonus, however, she accidentally triggers the device, causing it to detonate immediately.`,
-      cost: null,
+      cost: null, // Adds half the bonus damage rounding up against formations
     },
     {
       name: `Peer (Underworld)`,
@@ -600,13 +600,14 @@ class Guard {
       weight: 4,
     },
     // // // Bombs // // //
+    // Bonus refers to damage & blast / smoke. Kill 3 + half damage bonus rounding up against formations, or 3 + blast rating on a righteous fury
     {
       name: `Frag Grenade`,
       quantity: 6,
       quality: `Common`,
       description: `SBx3, S/-/-, 2d10 X, pen 0, clip 1, Blast (3), Ogryn-Proof`,
       weight: 0.5 * quantity,
-    },
+    },// three +1s, two +2s, one normal
     {
       name: `Krak Grenade`,
       quantity: 4,
@@ -628,7 +629,7 @@ class Guard {
       description: `SBx3, S/-/-, clip 1, Blast (1d10+3)
       Each turn a character is caught in the blast radius of the choke gas, they must (+0) Toughness. Failed gets a level of Fatigue cumulatively. The harmful effects linger on a character for 1d10 Rounds. If a character has 4 or more DoF, they also take 1d10 toughness damage for 1d5-1 hours. Choke cloud lingers for 1d5x3 minutes.`,
       weight: 0.5,
-    },
+    },// one +1, one normal
     {
       name: `Smoke Grenade`,
       quantity: 2,
@@ -636,24 +637,24 @@ class Guard {
       description: `SBx3, S/-/-, clip 1, Smoke (6)
       When a hit is scored from a weapon with the Smoke Quality, it creates a smokescreen a number of metres in diameter from the point of impact equal to the number in parentheses (X). This screen lasts for 1d10+10 Rounds, or less in adverse weather conditions`,
       weight: 0.5 * quantity,
-    },
+    },// one +2, one normal
     {
       name: `Fire Bomb`,
       quantity: 2,
       quality: `Common`,
       description: `SBx3, S/-/-, 1d10+3 E, pen 6, clip 1, Blast (3) Flame`,
       weight: 0.5 * quantity,
-    },
+    },// one +2, one +1
     {
       name: `Demolitions Charge`,
       quantity: 2,
       quality: `Common`,
       description: `
       3d10 + 2 per kg
-      blast(x = kg)
+      blast(5 * kg)
       `,
       weight: 1 * quantity,
-    },
+    },// one +2, one +1
     // // // Ammo // // //
     {
       name: `Inferno Shells`,
