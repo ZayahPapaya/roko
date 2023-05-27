@@ -459,8 +459,13 @@ class Guard {
       quality: `Common`,
       description: `
       -10 to BS unless two-handed or wearing Recoil Gloves
-      Pistol, 35m, S/-/-, 1d10+4 I, pen 2, clip 5, reload 2 full, 3kg
+      Pistol, 45m, S/-/-, 1d10+4 I, pen 2, clip 5, reload 2 full, Crippling (2), Accurate 3kg
       Red Dot Sight: +10 to BS when firing single shot
+      Concertina Pattern: Long Barrel, Lethal
+      Custom Grip: +5 to BS
+      Quick-Release: reload reduced by half action
+      Sacred Inscription: +10 against Pinning
+      Modified Stock: Aim grants additional +2/+4 depending on half / full action
       `,
       weight: 3,
     },
@@ -479,8 +484,12 @@ class Guard {
       Basic, 100m, S/4/0, 1d10+4 I, pen 2, clip 4, reload 2 full, Reliable
       Auxiliary Shotgun: Basic, 30m, S/-/0, 1d10+4 I, pen 0, clip 1, reload 2 full, Scatter
       (Scatter: Point Black Range gets +10 to hit and +3 damage. Short Range gets +10 to hit. Longer ranges -3 to Damage.)
+      Sawn-Off: reduced weight by 25%, +2 damage in short range
+      Quick-Release: reload reduced by half action
+      Custom Grip: +5 to BS
+      Reduced-Weight: Reduced weight by 1kg, melee has 10% chance to break it
       `,
-      weight: 6,
+      weight: 4,
     },
   ];
 
@@ -792,6 +801,9 @@ class Guard {
 
   wishlistGear = [
     `Second Concertina-pattern Hand Cannon`,
+    `Deadspace Earbuds`,
+    `Manstopper Rounds`,
+    `Second Red Dot Laser Sight`,
   ];
 
   wishlistPerks = [
