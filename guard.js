@@ -15,7 +15,7 @@ class Guard {
   armor = 6 + 1 + 4; // 11
   carry = 34/36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
   fate = 4/4;
-  XP = 8550;// 0 left
+  XP = 8975;// 425 left
 
   aptitudes = [
     {
@@ -454,7 +454,7 @@ class Guard {
 
   gunReferences = [
     {
-      name: `Concertina-Pattern Hand Cannon`,
+      name: `Concertina-Pattern Hand Cannon`,// 3/5 shots
       quantity: 1,
       quality: `Common`,
       description: `
@@ -477,7 +477,7 @@ class Guard {
       weight: 18,
     },
     {
-      name: `Pawb Gun`,
+      name: `Pawb Gun`,// shotgun spent
       quantity: 1,
       quality: `Common`,
       description: `
