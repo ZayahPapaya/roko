@@ -13,9 +13,9 @@ class Guard {
   Run: 24m
   `;
   armor = 6 + 1 + 4; // 11
-  carry = 34/36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
+  carry = 36.5/36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
   fate = 4/4;
-  XP = 8975;// 425 left
+  XP = 9400;// 600 left
 
   aptitudes = [
     {
@@ -115,11 +115,11 @@ class Guard {
     },
     agility: {
       mod: Math.floor(total / 10),
-      total: base + bonuses + purchased, // 45
+      total: base + bonuses + purchased, // 50
       base: 40,
       bonuses: 5,
-      purchased: 0,
-      cost: 0,
+      purchased: 5,
+      cost: 250,
     },
     toughness: {
       mod: Math.floor(total / 10),
@@ -612,16 +612,19 @@ class Guard {
     // Bonus refers to damage & blast / smoke. Kill 3 + half damage bonus rounding up against formations, or 3 + blast rating on a righteous fury
     {
       name: `Frag Grenade`,
-      quantity: 6,
+      quantity: 5,
       quality: `Common`,
       description: `SBx3, S/-/-, 2d10 X, pen 0, clip 1, Blast (3), Ogryn-Proof`,
       weight: 0.5 * quantity,
-    },// three +1s, two +2s, one normal
+    },// three +1s, one +2s, one normal
     {
       name: `Krak Grenade`,
-      quantity: 4,
+      quantity: 10,
       quality: `Common`,
-      description: `SBx3, S/-/-, 2d10+4, pen 6, clip 1, Concussive (0)`,
+      description: `
+      SBx3, S/-/-, 2d10+4, pen 6, clip 1, Concussive (0)
+      Righteous Fury on a 9 or 10 against vehicles
+      `,
       weight: 0.5 * quantity,
     },
     {
@@ -808,7 +811,7 @@ class Guard {
 
   wishlistPerks = [
     `300xp Put That Out!`,
-    `250xp +5 Agi`
+    //`250xp +5 Agi`
     `300xp Ace Operator (Operate +10) Agi + Tech tier 2`,
     `200xp Weapon-Tech (Tech Use +10, Int 40) Intelligence + Tech, tier 1`,
     `300xp Plasma Weapon Expertise (BS 40, plasma), BS + Tech, tier 2`,
@@ -847,3 +850,38 @@ class Guard {
     },
   ]
 };
+// Volunteer Kojak
+// WS    BS    S    T    AG     INT    PER    WP    FEL
+// 33    36    32    32    37    33    36    28    28
+// Armor: 3        Total TB: 3
+// Move: 3/6/9/18        Squad Strength: 8
+// Skills: Awareness, Athletics, Dodge, Common Lore(Imperium, Lore), Linguistics (Low Gothic), Navigate (Surface), Survival, Stealth, Tech use
+// Talents: Anti Armor, Tank hunters, Rapid Reload, etc etc
+
+// Concertina Pattern Hand Cannon:  76 BS before range modifiers
+// Pistol | 45m | S/-/- | 1d10+4 | Pen 2 | Clip 5 | Reload 2 Full | Accurate, Overheats, Crippling(2) | 3 kg | Very Rare
+// Effect on mobs: Orks do not get their toughness save vs. crippling ammo
+
+// Laspistol: As above
+// Pistol     30m     S/2/–     1d10+2 E     0     30     Half     Reliable     1.5kg     Common
+
+// Sgt Petrovich
+// WS    BS    S    T    AG     INT    PER    WP    FEL
+// 35    39    34    34    42    36    38    38    38
+// Armor: 3        Total TB: 3
+// Move: 8/16/24/48        Wounds: 12
+// Talents: Hard Target, Hardy, Sprint, Rapid Reload, all of the dual wielding thingies
+// Skills: Awareness, Athletics, Common Lore(Imperium, Lore), Linguistics (Low Gothic), Navigate (Surface), Survival, Tech use, Command +10
+
+// Chainsword: 
+// Melee     —     1d10+5 R     2     Tearing, Balanced     6kg     Average
+
+// Concertina Pattern Hand Cannon:
+// Pistol | 45m | S/-/- | 1d10+4 | Pen 2 | Clip 5 | Reload 2 Full | Accurate, Overheats, Crippling(2) | 3 kg | Very Rare
+// Effect on mobs: Orks do not get their toughness save vs. crippling ammo
+
+// Naval Pistol:
+// Pistol     20m     S/3/–     1d10+4 I     0     6     Full     Tearing     3 kg     Rare
+
+// Inferno pistol: 
+// Pistol     10m     S/–/–     2d10+10 E     12     3     Full     Melta     3kg     Near Unique
