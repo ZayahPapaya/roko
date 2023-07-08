@@ -13,9 +13,9 @@ class Guard {
   Run: 24m
   `;
   armor = 6 + 1 + 4; // 11
-  carry = 36.5/36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
-  fate = 4/4;
-  XP = 9400;// 600 left
+  carry = 36.5 / 36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
+  fate = 1 / 4;
+  XP = 9800;// 600 left
 
   aptitudes = [
     {
@@ -278,7 +278,7 @@ class Guard {
       description: `+10`,
       cost: 300,
     },
-    
+
   ];
 
   talents = [
@@ -448,13 +448,18 @@ class Guard {
       description: `After succeeding on an All Out Attack, Called Shot, Charge, Standard Attack or Stun action, the character imposes a penalty on all Evasion tests (dodge and parry) equal to 10x their DoS on the attack test.`,
       cost: 400,
     },
+    {
+      name: `Sprint`,
+      description: `The character can move at great speeds. When taking a Full Move Action, the character can move an extra number of metres equal to their Agility Bonus. When taking the Run Action, the character may double their movement for one Round. The character gains one level of Fatigue if they use this Talent two Turns in a row.`,
+      cost: 400,
+    },
   ];
 
   traits = [];
 
   gunReferences = [
     {
-      name: `Concertina-Pattern Hand Cannon`,// 3/5 shots
+      name: `Concertina-Pattern Hand Cannon`,// 5/5 shots
       quantity: 1,
       quality: `Common`,
       description: `
@@ -470,6 +475,21 @@ class Guard {
       weight: 3,
     },
     {
+      name: `Concertina-Pattern Hand Cannon`,// 5/5 shots
+      quantity: 1,
+      quality: `Common`,
+      description: `
+      -10 to BS unless two-handed or wearing Recoil Gloves
+      Pistol, 45m, S/-/-, 1d10+4 I, pen 2, clip 5, reload 2 full, Crippling (2), Accurate 3kg
+      Red Dot Sight: +10 to BS when firing single shot
+      Concertina Pattern: Long Barrel, Lethal
+      Quick-Release: reload reduced by half action
+      Sacred Inscription: +10 against Pinning
+      `,
+      //retry next session for custom grip and modified stock
+      weight: 3,
+    },
+    {
       name: `Plasma Gun`,
       quantity: 1,
       quality: `Common`,
@@ -477,7 +497,7 @@ class Guard {
       weight: 18,
     },
     {
-      name: `Pawb Gun`,// shotgun spent
+      name: `Pawb Gun`,
       quantity: 1,
       quality: `Common`,
       description: `
@@ -562,7 +582,7 @@ class Guard {
     // // // Guns // // //
     {
       name: `Concertina-Pattern Hand Cannon`,
-      quantity: 1,
+      quantity: 2,
       quality: `Common`,
       description: `
       -10 to BS unless two-handed or wearing Recoil Gloves
@@ -743,28 +763,32 @@ class Guard {
     },
     {
       name: `Red Dot Laser Sight`,
-      quantity: 1,
+      quantity: 2,
       quality: `Common`,
       description: `+10 to BS when firing single shot`,
       weight: null,
     },
+    {
+      name: `Comm Beads`,
+      quantity: 1,
+      quality: `Common`,
+      description: `Radio`,
+      weight: null,
+    },
+  ];
+
+  medals = [
+    {
+      name: `Ribbon Intrinsic`,
+      description: `+10 to any Battlefield Awareness and  Battlefield Maneuvering Tests.`
+    },
+    {
+      name: `Squigsort's Great Medal`,
+      description: `Unknown`,
+    },
   ];
 
   itemsInStorage = [
-    {
-      name: `Flak Vest`,
-      quantity: 1,
-      quality: `Common`,
-      description: undefined,
-      weight: undefined,
-    },
-    {
-      name: `Las Pistol`,
-      quantity: 1,
-      quality: `Common`,
-      description: undefined,
-      weight: undefined,
-    },
   ];
 
   orders = [];
@@ -816,14 +840,17 @@ class Guard {
     `200xp Weapon-Tech (Tech Use +10, Int 40) Intelligence + Tech, tier 1`,
     `300xp Plasma Weapon Expertise (BS 40, plasma), BS + Tech, tier 2`,
     `400xp Plasma Weapon Mastery (BS 50, Expertise), BS + Tech, tier 3`,
-    `400xp Sprint Agi + Field, tier 3`,
+    //`400xp Sprint Agi + Field, tier 3`,
     // ^ while Operator this is 2250xp, probably can't get anything else 
     // v won't easily be cheap
-    `600xp Infused Knowledge (Int 40, Lore), Int + Knowledge, tier 3`,
-    `600xp Step Aside (Agi 40, Dodge), Agi + Defence, tier 3`,
-    `450xp Hard Target (Agi 40), Agi + Def, tier 2`,
-    `600xp Mighty Shot (BS 40), BS + Offence, tier 3`,
-    `600xp Fearless (Nerves of Steel), Will + Defence, tier 3`,
+    `900xp Step Aside (Agi 40, Dodge), Agi + Defence, tier 3`, // additional dodge react
+    `450xp Hard Target (Agi 40), Agi + Def, tier 2`, // -20 to hit while running
+    `600xp Mighty Shot (BS 40), BS + Offence, tier 3`, // 1/2 BS as bonus to damage
+    // `300xp Spotter // comrade aims
+    // 350 remaining xp as Sharpshooter then change to something for these talents below
+    `600-1200xp Infused Knowledge (Int 40, Lore), Int + Knowledge, tier 3`, // +all the knowledge
+    `600-1200xp Fearless (Nerves of Steel), Will + Defence, tier 3`, // immune to fear and pinning
+    // `??? xp Tireless (T 40, WP 35), Tgh, WP, tier 2`, // ignore fatigue
   ];
 
   standardKit = `
