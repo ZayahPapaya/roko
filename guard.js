@@ -15,7 +15,7 @@ class Guard {
   armor = 6 + 1 + 4; // 11
   carry = 36.5 / 36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
   fate = 1 / 4;
-  XP = 9800;// 600 left
+  XP = 10100;
 
   aptitudes = [
     {
@@ -453,6 +453,21 @@ class Guard {
       description: `The character can move at great speeds. When taking a Full Move Action, the character can move an extra number of metres equal to their Agility Bonus. When taking the Run Action, the character may double their movement for one Round. The character gains one level of Fatigue if they use this Talent two Turns in a row.`,
       cost: 400,
     },
+        {
+      name: `Weapon-Tech`,
+      description: `The character has developed an extensive understanding of advanced technological weapons and their functions, opening them up and learning what makes them tick, hum, or click. Once per combat, the character can enhance his weapon, increasing its firepower and deadliness. For one Round per combat encounter, a weapon personally wielded by the character from the Melta, Plasma, Power, or Exotic category increases its Damage and Penetration by an amount equal to his Intelligence Bonus.`,
+      cost: 200,
+    },
+        {
+      name: `Plasma Weapon Expertise`,
+      description: `Whenever this character wields a plasma weapon (such as a plasma pistol, plasma gun, or plasma cannon) with the Overheats Quality, that weapon only Overheats on a roll of 96 or higher or on a Jam.`,
+      cost: 300,
+    },
+        {
+      name: `Plasma Weapon Mastery`,
+      description: `When this character fires a plasma weapon (such as a plasma pistol, plasma gun, or plasma cannon) with the Maximal Quality on the Maximal setting, the weapon adds an additional +2 bonus to Damage, its Penetration, and its Blast Quality (to a total of an additional 1d10+2 Damage, +4 Penetration, and +4 to its Blast Quality).`,
+      cost: 400,
+    },
   ];
 
   traits = [];
@@ -597,14 +612,13 @@ class Guard {
       weight: 3,
     },
     {
-      name: `Plasma Gun`,
+      name: `Plasma Cannon`,
       quantity: 1,
       quality: `Common`,
       description: `
-      Basic, 90m, S/2/-, 1d10+7 E, pen 6, clip 40, reload 5 full, Maximal, Overheats
-      Quick-Release: reload reduced by half action
+      Heavy, 120m, S/-/-, 2d10+10 E, pen 8, clip 16, reload 5 full, Blast (1), Maximal, Overheats
       `,
-      weight: 18,
+      weight: 40,
     },
     {
       name: `M79 Grenade Launcher`,
@@ -697,10 +711,10 @@ class Guard {
       weight: null,
     },
     {
-      name: `Plasma Flask`,
-      quantity: 3,
+      name: `Plasma Pack`,
+      quantity: 2,
       quality: `Common`,
-      description: `Refills Plasma Gun (40 per)`,
+      description: `Refills Plasma Gun (16 per)`,
       weight: null,
     },
     {
@@ -837,9 +851,9 @@ class Guard {
     `300xp Put That Out!`,
     //`250xp +5 Agi`
     `300xp Ace Operator (Operate +10) Agi + Tech tier 2`,
-    `200xp Weapon-Tech (Tech Use +10, Int 40) Intelligence + Tech, tier 1`,
-    `300xp Plasma Weapon Expertise (BS 40, plasma), BS + Tech, tier 2`,
-    `400xp Plasma Weapon Mastery (BS 50, Expertise), BS + Tech, tier 3`,
+    //`200xp Weapon-Tech (Tech Use +10, Int 40) Intelligence + Tech, tier 1`,
+    //`300xp Plasma Weapon Expertise (BS 40, plasma), BS + Tech, tier 2`,
+    //`400xp Plasma Weapon Mastery (BS 50, Expertise), BS + Tech, tier 3`,
     //`400xp Sprint Agi + Field, tier 3`,
     // ^ while Operator this is 2250xp, probably can't get anything else 
     // v won't easily be cheap
