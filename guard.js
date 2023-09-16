@@ -3,7 +3,7 @@ class Guard {
   regiment = undefined;
 
   maxWounds = 10;
-  damage = 0;
+  damage = 1;
   wounds = `${this.maxWounds - this.damage}`;
 
   movement = `
@@ -13,9 +13,9 @@ class Guard {
   Run: 24m
   `;
   armor = 6 + 1 + 4; // 11
-  carry = 36.5 / 36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
-  fate = 1 / 4;
-  XP = 10100;
+  carry = 36 / 36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
+  fate = 2 / 4;
+  XP = 10100;// 450 left, might be next reclass time?
 
   aptitudes = [
     {
@@ -468,6 +468,11 @@ class Guard {
       description: `When this character fires a plasma weapon (such as a plasma pistol, plasma gun, or plasma cannon) with the Maximal Quality on the Maximal setting, the weapon adds an additional +2 bonus to Damage, its Penetration, and its Blast Quality (to a total of an additional 1d10+2 Damage, +4 Penetration, and +4 to its Blast Quality).`,
       cost: 400,
     },
+    {
+      name: `Ace Operator`,
+      description: `Whenever the character fails an Operate Test, she may spend a Fate Point to reduce her Degrees of Failure on the Test by her Agility Bonus.`,
+      cost: 300,
+    },
   ];
 
   traits = [];
@@ -498,21 +503,24 @@ class Guard {
       Pistol, 45m, S/-/-, 1d10+4 I, pen 2, clip 5, reload 2 full, Crippling (2), Accurate 3kg
       Red Dot Sight: +10 to BS when firing single shot
       Concertina Pattern: Long Barrel, Lethal
+      Custom Grip: +5 to BS
       Quick-Release: reload reduced by half action
       Sacred Inscription: +10 against Pinning
       `,
-      //retry next session for custom grip and modified stock
+      //retry next session for modified stock
       weight: 3,
     },
     {
-      name: `Plasma Gun`,
+      name: `Plasma Cannon`,// 8/16 shots
       quantity: 1,
       quality: `Common`,
-      description: `Basic, 90m, S/2/-, 1d10+7 E, pen 6, clip 40, reload 5 full, Maximal, Overheats`,
-      weight: 18,
+      description: `
+      Heavy, 120m, S/-/-, 2d10+10 E, pen 8, clip 16, reload 5 full, Blast (1), Maximal, Overheats
+      `,
+      weight: 40,
     },
     {
-      name: `Pawb Gun`,
+      name: `Pawb Gun`, // inferno shell
       quantity: 1,
       quality: `Common`,
       description: `
@@ -582,7 +590,7 @@ class Guard {
     },
     {
       name: `Concertina Wire`,
-      quantity: 2,
+      quantity: 1,
       quality: `Common`,
       description: `Any character attempting to cross deployed concertina wire must make (-20) Acrobatics or suffer 1d5 rending + 1 for each DoF.`,
       weight: 0.5 * quantity,
@@ -628,7 +636,7 @@ class Guard {
       weight: 5,
     },
     {
-      name: `Pawb Gun`,
+      name: `Pawb Gun`, // shotgun shell empty
       quantity: 1,
       quality: `Common`,
       description: `
@@ -663,7 +671,7 @@ class Guard {
     },
     {
       name: `Snare Mine`,
-      quantity: 2,
+      quantity: 1/2,
       quality: `Common`,
       description: `Placing mine (+20) Tech-Use and one grenade or other explosive. When a creature >= Size (3)  approaches within your choice of 1-3m the detonator triggers with a delay of your choice of 0-5 Rounds. Detecting mine takes (+0) Awareness with -10 per DoS on the Tech-Use to plant.`,
       weight: 1 * quantity,
@@ -686,11 +694,11 @@ class Guard {
     },// one +2, one normal
     {
       name: `Fire Bomb`,
-      quantity: 2,
+      quantity: 1/2,
       quality: `Common`,
       description: `SBx3, S/-/-, 1d10+3 E, pen 6, clip 1, Blast (3) Flame`,
       weight: 0.5 * quantity,
-    },// one +2, one +1
+    },// one +2,
     {
       name: `Demolitions Charge`,
       quantity: 2,
@@ -703,7 +711,7 @@ class Guard {
     },// one +2, one +1
     // // // Ammo // // //
     {
-      name: `Inferno Shells`,
+      name: `Inferno Shells`,// 15/16 left
       quantity: 2,
       quality: `Common`,
       description: `Refills Shotgun (8 per)
@@ -711,14 +719,14 @@ class Guard {
       weight: null,
     },
     {
-      name: `Plasma Pack`,
+      name: `Plasma Pack`, // 32/32
       quantity: 2,
       quality: `Common`,
-      description: `Refills Plasma Gun (16 per)`,
+      description: `Refills Plasma Cannon (16 per)`,
       weight: null,
     },
     {
-      name: `Hand Cannon Rack`,
+      name: `Hand Cannon Rack`, // 4/10
       quantity: 2,
       quality: `Common`,
       description: `Refills Hand Cannon (5 per)`,
@@ -769,10 +777,17 @@ class Guard {
       weight: undefined,
     },
     {
+      name: `Sidecar`,
+      quantity: 1,
+      quality: `Kickass`,
+      description: `It's for rigging a Plasma Cannon`,
+      weight: undefined,
+    },
+    {
       name: `Cyclops Demolitions Vehicle`,
       quantity: 1,
       quality: `Common`,
-      description: `Bomb-Squig`,
+      description: `Wagner, the Bomb Squig`,
       weight: undefined,
     },
     {
@@ -794,11 +809,11 @@ class Guard {
   medals = [
     {
       name: `Ribbon Intrinsic`,
-      description: `+10 to any Battlefield Awareness and  Battlefield Maneuvering Tests.`
+      description: `+10 to any Battlefield Awareness and Battlefield Maneuvering Tests.`
     },
     {
       name: `Squigsort's Great Medal`,
-      description: `Unknown`,
+      description: `+10 to tech-use in battle`
     },
   ];
 
@@ -807,7 +822,7 @@ class Guard {
 
   orders = [];
 
-  vehiclActions = [
+  vehicleActions = [
     {
       name: `Evasive Manoeuvring`,
       action: `Full Action`,
@@ -850,7 +865,7 @@ class Guard {
   wishlistPerks = [
     `300xp Put That Out!`,
     //`250xp +5 Agi`
-    `300xp Ace Operator (Operate +10) Agi + Tech tier 2`,
+    //`300xp Ace Operator (Operate +10) Agi + Tech tier 2`,
     //`200xp Weapon-Tech (Tech Use +10, Int 40) Intelligence + Tech, tier 1`,
     //`300xp Plasma Weapon Expertise (BS 40, plasma), BS + Tech, tier 2`,
     //`400xp Plasma Weapon Mastery (BS 50, Expertise), BS + Tech, tier 3`,
