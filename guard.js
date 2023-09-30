@@ -14,8 +14,8 @@ class Guard {
   `;
   armor = 6 + 1 + 4; // 11
   carry = 36 / 36; // 59 total -18 plasma on comrade, -5 lascutter & concertina on bike = 36 carried
-  fate = 2 / 4;
-  XP = 10100;// 450 left, might be next reclass time?
+  fate = 4 / 4;
+  XP = 11150;// 0 left
 
   aptitudes = [
     {
@@ -30,9 +30,14 @@ class Guard {
     },
     {
       specialty: `Operator`,
-      current: true,
+      current: false,
       aptitudes: [`Agility`, `Ballistics Skill`, `Fellowship`, `Fieldcraft`, `Intelligence`, `Tech`]
     },
+    {
+      specialty: `Sharpshooter`,
+      current: true,
+      aptitudes: [`Agility`, `Ballistic Skill`, `Fellowship`, `Finesse`, `Offence`, `Perception`]
+    }
   ];
 
   homeworld = {
@@ -453,17 +458,17 @@ class Guard {
       description: `The character can move at great speeds. When taking a Full Move Action, the character can move an extra number of metres equal to their Agility Bonus. When taking the Run Action, the character may double their movement for one Round. The character gains one level of Fatigue if they use this Talent two Turns in a row.`,
       cost: 400,
     },
-        {
+    {
       name: `Weapon-Tech`,
       description: `The character has developed an extensive understanding of advanced technological weapons and their functions, opening them up and learning what makes them tick, hum, or click. Once per combat, the character can enhance his weapon, increasing its firepower and deadliness. For one Round per combat encounter, a weapon personally wielded by the character from the Melta, Plasma, Power, or Exotic category increases its Damage and Penetration by an amount equal to his Intelligence Bonus.`,
       cost: 200,
     },
-        {
+    {
       name: `Plasma Weapon Expertise`,
       description: `Whenever this character wields a plasma weapon (such as a plasma pistol, plasma gun, or plasma cannon) with the Overheats Quality, that weapon only Overheats on a roll of 96 or higher or on a Jam.`,
       cost: 300,
     },
-        {
+    {
       name: `Plasma Weapon Mastery`,
       description: `When this character fires a plasma weapon (such as a plasma pistol, plasma gun, or plasma cannon) with the Maximal Quality on the Maximal setting, the weapon adds an additional +2 bonus to Damage, its Penetration, and its Blast Quality (to a total of an additional 1d10+2 Damage, +4 Penetration, and +4 to its Blast Quality).`,
       cost: 400,
@@ -472,6 +477,31 @@ class Guard {
       name: `Ace Operator`,
       description: `Whenever the character fails an Operate Test, she may spend a Fate Point to reduce her Degrees of Failure on the Test by her Agility Bonus.`,
       cost: 300,
+    },
+    {
+      name: `Put That Out!`,
+      description: `If the operator's vehicle catches fire, the Operator's Comrade jumps into action. If the Comrade is inside the affected vehicle, he spends a Full Action to end any Fire effect currently afflicting the vehicle.`,
+      cost: 300,
+    },
+    {
+      name: `Heightened Senses (Sight)`,
+      description: `The character gains a +10 bonus to any Tests specifically involving this sense.`,
+      cost: null,
+    },
+    {
+      name: `Pinpoint Guidance`,
+      description: `Half Action Order. For the Sharpshooter's next single shot Ranged Attack, her weapon counts as having the Accurate Quality. The Sharpshooter's Comrade must be in Cohesion to enact this Order. This Order cannot be used for weapons with the Blast, Haywire, Inaccurate, Indirect, Scatter, Spray, Storm, or Twin-Linked Qualities, and does not add Damage for weapons that do not normally deal Damage.`,
+      cost: 500,
+    },
+    {
+      name: `Spotter`,
+      description: `If the Sharpshooter is using an Accurate weapon, and her Comrade is in Cohesion, the Sharpshooter may use her Comrade to make an Aim Action, and gain the benefits for herself.`,
+      cost: 300,
+    },
+    {
+      name: `Mighty Shot`,
+      description: `The character adds half her Ballistic Skill Bonus to Damage inflicted witth a ranged weapon.`,
+      cost: 400,
     },
   ];
 
@@ -511,7 +541,7 @@ class Guard {
       weight: 3,
     },
     {
-      name: `Plasma Cannon`,// 8/16 shots
+      name: `Plasma Cannon`,// 13/16 shots
       quantity: 1,
       quality: `Common`,
       description: `
@@ -671,7 +701,7 @@ class Guard {
     },
     {
       name: `Snare Mine`,
-      quantity: 1/2,
+      quantity: 1 / 2,
       quality: `Common`,
       description: `Placing mine (+20) Tech-Use and one grenade or other explosive. When a creature >= Size (3)  approaches within your choice of 1-3m the detonator triggers with a delay of your choice of 0-5 Rounds. Detecting mine takes (+0) Awareness with -10 per DoS on the Tech-Use to plant.`,
       weight: 1 * quantity,
@@ -694,7 +724,7 @@ class Guard {
     },// one +2, one normal
     {
       name: `Fire Bomb`,
-      quantity: 1/2,
+      quantity: 1 / 2,
       quality: `Common`,
       description: `SBx3, S/-/-, 1d10+3 E, pen 6, clip 1, Blast (3) Flame`,
       weight: 0.5 * quantity,
@@ -719,7 +749,7 @@ class Guard {
       weight: null,
     },
     {
-      name: `Plasma Pack`, // 32/32
+      name: `Plasma Pack`, // 24/32
       quantity: 2,
       quality: `Common`,
       description: `Refills Plasma Cannon (16 per)`,
@@ -863,7 +893,7 @@ class Guard {
   ];
 
   wishlistPerks = [
-    `300xp Put That Out!`,
+    //`300xp Put That Out!`,
     //`250xp +5 Agi`
     //`300xp Ace Operator (Operate +10) Agi + Tech tier 2`,
     //`200xp Weapon-Tech (Tech Use +10, Int 40) Intelligence + Tech, tier 1`,
@@ -872,12 +902,13 @@ class Guard {
     //`400xp Sprint Agi + Field, tier 3`,
     // ^ while Operator this is 2250xp, probably can't get anything else 
     // v won't easily be cheap
-    `900xp Step Aside (Agi 40, Dodge), Agi + Defence, tier 3`, // additional dodge react
+    `600xp Step Aside (Agi 40, Dodge), Agi + Defence, tier 3`, // additional dodge react
     `450xp Hard Target (Agi 40), Agi + Def, tier 2`, // -20 to hit while running
-    `600xp Mighty Shot (BS 40), BS + Offence, tier 3`, // 1/2 BS as bonus to damage
-    // `300xp Spotter // comrade aims
-    // 350 remaining xp as Sharpshooter then change to something for these talents below
-    `600-1200xp Infused Knowledge (Int 40, Lore), Int + Knowledge, tier 3`, // +all the knowledge
+    // ^ might have to give up Hard Target in favour of Pinpoint Guidance (make any weapon Accurate) for 500xp
+    `400xp Mighty Shot (BS 40), BS + Offence, tier 3`, // 1/2 BS as bonus to damage
+    `300xp Spotter comrade aims`
+      // 350 remaining xp as Sharpshooter then change to something for these talents below
+      `600-1200xp Infused Knowledge (Int 40, Lore), Int + Knowledge, tier 3`, // +all the knowledge
     `600-1200xp Fearless (Nerves of Steel), Will + Defence, tier 3`, // immune to fear and pinning
     // `??? xp Tireless (T 40, WP 35), Tgh, WP, tier 2`, // ignore fatigue
   ];
